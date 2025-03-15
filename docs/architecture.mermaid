@@ -1,0 +1,65 @@
+flowchart TB
+    subgraph Main["main.go"]
+        CLI["Command Line Interface\n(cobra)"]
+        Config["Configuration\n(parseConfig)"]
+        CLI --> Config
+        Config --> RunScraper["runScraper()"]
+    end
+
+    subgraph Modules["Core Modules"]
+        direction TB
+        Crawler["crawler.Crawler\n- Web crawling\n- URL discovery"]
+        Downloader["downloader.Downloader\n- File detection\n- File downloading"]
+        Processor["processor.Processor\n- File processing\n- Metadata extraction"]
+        Storage["storage.JSONStorage\n- JSON file storage"]
+
+        Crawler -- "URLs" --> Downloader
+        Downloader -- "Downloaded Files" --> Processor
+        Processor -- "Metadata" --> Storage
+    end
+
+    RunScraper --> Initialize["Initialize Components"]
+    Initialize --> StartComponents["Start Components"]
+    StartComponents --> Crawler
+
+    subgraph DataFlow["Data Flow"]
+        URLQueue["URL Queue Channel"]
+        DownloadQueue["Download Queue Channel"]
+        ProcessQueue["Process Queue Channel"]
+        
+        URLQueue --> DownloadQueue
+        DownloadQueue --> ProcessQueue
+        ProcessQueue --> JSONFile["installers.json"]
+    end
+    
+    subgraph Worker["Concurrent Workers"]
+        CrawlWorkers["Crawler Workers\n(configurable)"]
+        DownloadWorkers["Download Workers\n(configurable)"]
+        ProcessWorkers["Processor Workers\n(configurable)"]
+        
+        CrawlWorkers --> DownloadWorkers
+        DownloadWorkers --> ProcessWorkers
+    end
+    
+    Crawler -.-> CrawlWorkers
+    Downloader -.-> DownloadWorkers
+    Processor -.-> ProcessWorkers
+    
+    CrawlWorkers -.-> URLQueue
+    DownloadWorkers -.-> DownloadQueue
+    ProcessWorkers -.-> ProcessQueue
+    
+    subgraph Signals["Signal Handling"]
+        SIGINT["SIGINT Signal"]
+        SIGTERM["SIGTERM Signal"]
+        GracefulStop["Graceful Shutdown"]
+        
+        SIGINT --> GracefulStop
+        SIGTERM --> GracefulStop
+    end
+    
+    GracefulStop -.-> |"Stop"| Crawler
+    GracefulStop -.-> |"Stop"| Downloader
+    GracefulStop -.-> |"Stop"| Processor
+    
+    Storage --> FinalStats["Final Stats Output"]
