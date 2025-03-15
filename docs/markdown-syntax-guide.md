@@ -1,103 +1,240 @@
-# Markdown Syntax Guide
+# Refined Requirements for Installer File Scraper
 
-This article offers a sample of basic Markdown syntax that can be used in content files, also it shows whether basic HTML elements are decorated with CSS.
-<!--more-->
+1. **Core Functionality**:
+   - Scrape specified websites for installer files (.exe, .msi, .dmg, .pkg, .deb, .rpm, etc.)
+   - Follow links within the domain and subdomains
+   - Download files temporarily to process them
+   - Generate SHA3 hash for each installer file
+   - Delete downloaded files after processing
+   - Store metadata to a JSON file
 
-## Headings
+2. **Data Collection**:
+   - File name
+   - Source URL
+   - Parent website domain
+   - Discovery timestamp
+   - SHA3 hash
+   - File size
+   - Platform identification (Windows/macOS/Linux)
+   - File type/extension
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+3. **JSON Output**:
+   - Append new entries to existing JSON file if present
+   - Sort entries (by domain and filename)
+   - Ensure no duplicate entries (based on SHA3 hash and URL)
+   - Maintain a clean, well-formatted JSON structure
 
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+4. **URL Filtering**:
+   - Include/exclude patterns using regex
+   - Skip URLs matching specific patterns (e.g., forum threads, blog posts)
+   - Whitelist certain URL patterns for prioritized crawling
+   - Filter by file path components
+   - Option to limit crawling to specific subdirectories
 
-## Paragraph
+5. **Customizable Concurrency**:
+   - Configurable number of crawler goroutines
+   - Adjustable parallel download limit
+   - Separate controls for crawling and downloading concurrency
+   - Configurable rate limiting per domain
+   - Domain-specific concurrency settings (optional)
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem.
+6. **Configuration Options**:
+   - Starting URL(s)
+   - Maximum crawl depth
+   - Target file extensions
+   - URL inclusion/exclusion regex patterns
+   - Output JSON file path
+   - Temporary download directory
+   - Concurrency parameters
+   - Request delays/rate limits
 
-Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+7. **Operation**:
+   - Clean up all temporary files, even on error or interruption
+   - Track and log progress
+   - Provide statistics on completion (files found, processed, errors)
+   - URL pattern matching statistics (how many URLs skipped/included)
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+8. **Efficiency and Resilience**:
+   - Implement appropriate timeouts
+   - Handle network errors with configurable retries
+   - Memory-efficient processing of large files
+   - Graceful shutdown on interrupt signals
 
-## Blockquotes
+The application will be a self-contained Go program with robust URL filtering capabilities to efficiently focus the crawling on productive paths, avoiding unnecessary requests to irrelevant URLs and thereby improving overall performance and reducing crawl time.
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+Architecture Options for Installer File Scraper
+Let me outline different architectural approaches we could take for this application:
+1. Monolithic Single-Binary Approach
+Structure:
 
-### Blockquote without attribution
+Single executable with all functionality
+Configuration via command-line flags or config file
+Direct flow from crawling to processing to output
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use *Markdown syntax* within a blockquote.
+Components:
 
-#### Blockquote with attribution
+Main coordinator
+URL crawler
+File detector/downloader
+Hash generator
+JSON handler
 
-> Simplicity is the ultimate sophistication.
-> <cite>Leonardo da Vinci[^1]</cite>
+Pros:
 
-[^1]: The above quote is often attributed to Leonardo da Vinci but there is no concrete evidence to support this.
+Simple deployment (single binary)
+No external dependencies beyond Go standard library and colly
+Easy to understand flow
+Lower overhead
 
+Cons:
 
-## Tables
+Less modular
+Potentially harder to test individual components
+All operations in same process space
 
-   Name | Age
---------|------
-    Bob | 27
-  Alice | 23
+2. Pipeline Architecture
+Structure:
 
-### Inline Markdown within tables
+Series of stages with channels connecting them
+Each stage operates independently
+Data flows through unidirectional channels
 
-<div style="overflow-x: auto">
+Components:
 
-| Inline&nbsp;&nbsp;&nbsp;     | Markdown&nbsp;&nbsp;&nbsp;  | In&nbsp;&nbsp;&nbsp;                | Table      |
-| ---------- | --------- | ----------------- | ---------- |
-| *italics*  | **bold**  | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code`     |
+URL discovery pipeline
+Download queue pipeline
+Processing pipeline
+Output persistence pipeline
 
-</div>
+Pros:
 
-## Code Blocks
+Better separation of concerns
+Independent scaling of different stages
+More testable components
+Easier to optimize bottlenecks
 
-### Code block indented with four spaces
+Cons:
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
+More complex implementation
+Requires careful channel management
+Potential for deadlocks if not designed carefully
 
-## List Types
+3. Worker Pool Architecture
+Structure:
 
-### Ordered List
+Central job queue
+Multiple worker types for different tasks
+Coordinator to manage workers
 
-1. First item
-2. Second item
-3. Third item
+Components:
 
-### Unordered List
+Job dispatcher
+Crawler workers
+Downloader workers
+Processor workers
+Output manager
 
-* List item
-* Another item
-* And another item
+Pros:
 
-### Nested list
+Excellent for controlling concurrency
+Can dynamically adjust worker counts
+Good for handling diverse workloads
+More robust error isolation
 
-* Item
-1. First Sub-item
-2. Second Sub-item
+Cons:
 
-## Other Elements — abbr, sub, sup, kbd, mark
+More complex state management
+Overhead of queue management
+Requires more careful synchronization
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+4. Event-Driven Architecture
+Structure:
 
-H<sub>2</sub>O
+Components communicate via events
+Each component subscribes to relevant events
+Loose coupling between parts
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+Components:
 
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+Event bus
+URL discoverer
+File detector
+Downloader
+Hash generator
+Metadata collector
+JSON writer
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+Pros:
+
+Very loose coupling
+Highly extensible
+Easy to add new features
+Good separation of concerns
+
+Cons:
+
+More complex to implement in Go
+Potential overhead from event handling
+Harder to reason about program flow
+
+5. Hybrid Approach (Recommended)
+Structure:
+
+Pipeline-based core with worker pools for CPU/IO-bound tasks
+Centralized coordination
+Configurable worker counts per stage
+
+Components:
+
+URL Queue Manager
+Crawler worker pool
+Downloader worker pool
+File processor worker pool
+JSON persistence manager
+
+Pros:
+
+Combines benefits of pipeline and worker pool approaches
+Flexible concurrency control
+Good separation of concerns
+Efficient resource utilization
+
+Cons:
+
+Moderate complexity
+Requires careful design of interfaces between components
+
+This hybrid approach would give us the flexibility to control concurrency at different stages while maintaining a clear data flow through the system.
+
+installer-scraper/
+├── cmd/
+│   └── installer-scraper/
+│       └── main.go           # Entry point, argument parsing
+├── internal/
+│   ├── config/
+│   │   └── config.go         # Configuration structures and loading
+│   ├── crawler/
+│   │   ├── crawler.go        # URL discovery and filtering
+│   │   └── queue.go          # URL queue management
+│   ├── downloader/
+│   │   ├── downloader.go     # File downloading logic
+│   │   └── filedetector.go   # Installer file detection
+│   ├── processor/
+│   │   ├── processor.go      # File processing coordinator
+│   │   ├── hash.go           # Hash generation
+│   │   └── metadata.go       # Metadata extraction
+│   ├── storage/
+│   │   ├── storage.go        # Storage interface
+│   │   └── json.go           # JSON file implementation
+│   └── types/
+│       └── types.go          # Shared data structures
+├── pkg/
+│   ├── fileutils/
+│   │   └── fileutils.go      # File handling utilities
+│   ├── urlutils/
+│   │   └── urlutils.go       # URL manipulation utilities
+│   └── workerpool/
+│       └── workerpool.go     # Generic worker pool implementation
+├── go.mod
+├── go.sum
+└── README.md
