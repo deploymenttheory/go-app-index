@@ -14,6 +14,7 @@ A tool for discovering, downloading, and indexing software installer files from 
 - Deduplicate entries based on hash and URL
 - Customizable concurrency settings
 - Clean up temporary files automatically
+- Colored logging with configurable verbosity levels
 
 ## Installation
 
@@ -40,6 +41,12 @@ go build -o installer-scraper ./cmd/installer-scraper
 
 # Control concurrency
 ./installer-scraper -u https://example.com -w 20 -W 10 -p 5
+
+# Enable verbose debug logging
+./installer-scraper -u https://example.com -v
+
+# Log to a file instead of stdout
+./installer-scraper -u https://example.com --log-file=scraper.log
 ```
 
 ### Command Line Options
@@ -58,6 +65,9 @@ go build -o installer-scraper ./cmd/installer-scraper
 | `-p, --processor-workers` | Number of processor workers | `3` |
 | `-D, --delay` | Delay between requests in milliseconds | `200` |
 | `-c, --config` | Path to config file | - |
+| `-v, --verbose` | Enable verbose debugging output | `false` |
+| `--no-color` | Disable colored output | `false` |
+| `--log-file` | Log to file instead of stdout | - |
 
 ## Example JSON Output
 
@@ -93,6 +103,36 @@ go build -o installer-scraper ./cmd/installer-scraper
   ]
 }
 ```
+
+## Logging
+
+The application includes a comprehensive logging system with the following features:
+
+- **Colored output**: Different colors for each log level (blue for INFO, yellow for WARNING, red for ERROR)
+- **Configurable verbosity**: Control the amount of output with the `-v` flag
+- **File logging**: Redirect logs to a file with `--log-file`
+- **Disable colors**: Use `--no-color` when logging to files or terminals without color support
+
+### Log Levels
+
+- **ERROR**: Critical issues that prevent proper operation
+- **WARNING**: Non-critical issues that may affect results
+- **INFO**: Normal operational information
+- **DEBUG**: Detailed information for troubleshooting (enabled with `-v`)
+
+### Interpreting Logs
+
+The default INFO level shows:
+- URLs being visited
+- Files being downloaded
+- Processing status
+- Final statistics
+
+The DEBUG level (with `-v`) additionally shows:
+- All discovered links
+- Link filtering decisions
+- HTTP response details
+- Detailed processing information
 
 ## Use Cases
 
@@ -136,6 +176,13 @@ done
 ./installer-scraper -u https://example.com -w 30 -W 15 -p 8 -D 100
 ```
 
+### Detailed Debugging Session
+
+```bash
+# Maximum verbosity for troubleshooting
+./installer-scraper -u https://example.com -v --log-file=debug.log
+```
+
 ## Architecture
 
 The application uses a hybrid pipeline/worker pool architecture:
@@ -144,6 +191,7 @@ The application uses a hybrid pipeline/worker pool architecture:
 2. **Downloader**: Detects and downloads installer files
 3. **Processor**: Generates hashes and extracts metadata
 4. **Storage**: Manages JSON output with deduplication
+5. **Logger**: Provides structured, colored logging with configurable levels
 
 Each component uses worker pools with configurable concurrency.
 

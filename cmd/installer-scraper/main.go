@@ -1,7 +1,8 @@
+// In main.go, update your code:
+
 package main
 
 import (
-	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
@@ -11,6 +12,7 @@ import (
 	"github.com/deploymenttheory/go-app-index/internal/config"
 	"github.com/deploymenttheory/go-app-index/internal/crawler"
 	"github.com/deploymenttheory/go-app-index/internal/downloader"
+	"github.com/deploymenttheory/go-app-index/internal/logger"
 	"github.com/deploymenttheory/go-app-index/internal/processor"
 	"github.com/deploymenttheory/go-app-index/internal/storage"
 )
@@ -26,17 +28,23 @@ func main() {
 		Short: "Scrape websites for installer files",
 		Long: `A web scraper that finds installer files (.exe, .msi, .dmg, .pkg, etc.)
 from specified websites, computes their SHA3 hash, and stores metadata to a JSON file.`,
-		Run: runScraper,
+		PersistentPreRun: setupLogging,
+		Run:              runScraper,
 	}
 
 	// Global flags
 	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file (default is ./config.yaml)")
 
+	// Logging flags
+	rootCmd.PersistentFlags().BoolP("verbose", "v", false, "enable verbose debugging output")
+	rootCmd.PersistentFlags().Bool("no-color", false, "disable colored output")
+	rootCmd.PersistentFlags().String("log-file", "", "log to file instead of stdout")
+
 	// Required flags
 	rootCmd.Flags().StringP("url", "u", "", "URL to start scraping (required)")
 	rootCmd.MarkFlagRequired("url")
 
-	// Optional flags
+	// Optional flags (same as before)
 	rootCmd.Flags().StringP("output", "o", "installers.json", "output JSON file")
 	rootCmd.Flags().IntP("depth", "d", 3, "maximum crawl depth")
 	rootCmd.Flags().StringSliceP("extensions", "e",
@@ -46,7 +54,7 @@ from specified websites, computes their SHA3 hash, and stores metadata to a JSON
 	rootCmd.Flags().StringSliceP("exclude", "x", []string{}, "regex patterns to exclude URLs")
 	rootCmd.Flags().String("temp-dir", os.TempDir(), "temporary directory for downloads")
 
-	// Concurrency flags
+	// Concurrency flags (same as before)
 	rootCmd.Flags().IntP("crawler-workers", "w", 10, "number of crawler workers")
 	rootCmd.Flags().IntP("download-workers", "W", 5, "number of download workers")
 	rootCmd.Flags().IntP("processor-workers", "p", 3, "number of processor workers")
@@ -54,8 +62,42 @@ from specified websites, computes their SHA3 hash, and stores metadata to a JSON
 
 	// Execute
 	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
+		logger.Errorf("Error executing command: %v", err)
 		os.Exit(1)
+	}
+}
+
+// setupLogging configures the logger based on command line flags
+func setupLogging(cmd *cobra.Command, args []string) {
+	// Check for verbose flag
+	verbose, _ := cmd.Flags().GetBool("verbose")
+	if verbose {
+		logger.SetLevel(logger.LevelDebug)
+		logger.Infof("Debug logging enabled")
+	} else {
+		logger.SetLevel(logger.LevelInfo)
+	}
+
+	// Check for no-color flag
+	noColor, _ := cmd.Flags().GetBool("no-color")
+	if noColor {
+		logger.DisableColors()
+	}
+
+	// Check for log file
+	logFile, _ := cmd.Flags().GetString("log-file")
+	if logFile != "" {
+		// Open log file
+		file, err := os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+		if err != nil {
+			logger.Errorf("Failed to open log file: %v", err)
+		} else {
+			// Disable colors when logging to file
+			logger.DisableColors()
+			// Set up loggers with file output
+			logger.Initialize(file, file, file, file)
+			logger.Infof("Logging to file: %s", logFile)
+		}
 	}
 }
 
@@ -64,12 +106,12 @@ func runScraper(cmd *cobra.Command, args []string) {
 	var err error
 	cfg, err = parseConfig(cmd)
 	if err != nil {
-		fmt.Printf("Error parsing configuration: %v\n", err)
+		logger.Errorf("Error parsing configuration: %v", err)
 		os.Exit(1)
 	}
 
-	fmt.Printf("Starting scraper for %s with depth %d\n", cfg.StartURL, cfg.MaxDepth)
-	fmt.Printf("Looking for file extensions: %v\n", cfg.FileExtensions)
+	logger.Infof("Starting scraper for %s with depth %d", cfg.StartURL, cfg.MaxDepth)
+	logger.Infof("Looking for file extensions: %v", cfg.FileExtensions)
 
 	// Setup signal handling for graceful shutdown
 	signalChan := make(chan os.Signal, 1)
@@ -78,7 +120,7 @@ func runScraper(cmd *cobra.Command, args []string) {
 	// Initialize components
 	store, err := storage.New(cfg.OutputFile)
 	if err != nil {
-		fmt.Printf("Failed to initialize storage: %v\n", err)
+		logger.Errorf("Failed to initialize storage: %v", err)
 		os.Exit(1)
 	}
 
@@ -94,7 +136,7 @@ func runScraper(cmd *cobra.Command, args []string) {
 	// Run crawler (blocking until complete or interrupted)
 	go func() {
 		if err := crawl.Run(); err != nil {
-			fmt.Printf("Crawler error: %v\n", err)
+			logger.Errorf("Crawler error: %v", err)
 		}
 		// Signal we're done discovering URLs
 		down.Done()
@@ -103,24 +145,24 @@ func runScraper(cmd *cobra.Command, args []string) {
 	// Wait for completion or interrupt
 	select {
 	case <-crawl.Done():
-		fmt.Println("Crawling complete, waiting for processing to finish...")
+		logger.Infof("Crawling complete, waiting for processing to finish...")
 		down.Wait()
 		proc.Done()
 		proc.Wait()
 	case sig := <-signalChan:
-		fmt.Printf("Received signal %v, shutting down gracefully...\n", sig)
+		logger.Infof("Received signal %v, shutting down gracefully...", sig)
 		crawl.Stop()
 		down.Stop()
 		proc.Stop()
 	}
 
 	// Final stats
-	fmt.Println("Scraper completed")
-	fmt.Printf("URLs visited: %d\n", crawl.Stats().URLsVisited)
-	fmt.Printf("URLs skipped: %d\n", crawl.Stats().URLsSkipped)
-	fmt.Printf("Files found: %d\n", down.Stats().FilesFound)
-	fmt.Printf("Files processed: %d\n", proc.Stats().FilesProcessed)
-	fmt.Printf("Results saved to: %s\n", cfg.OutputFile)
+	logger.Infof("Scraper completed")
+	logger.Infof("URLs visited: %d", crawl.Stats().URLsVisited)
+	logger.Infof("URLs skipped: %d", crawl.Stats().URLsSkipped)
+	logger.Infof("Files found: %d", down.Stats().FilesFound)
+	logger.Infof("Files processed: %d", proc.Stats().FilesProcessed)
+	logger.Infof("Results saved to: %s", cfg.OutputFile)
 }
 
 func parseConfig(cmd *cobra.Command) (config.Config, error) {

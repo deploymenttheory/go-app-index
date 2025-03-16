@@ -7,6 +7,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/deploymenttheory/go-app-index/internal/logger"
 	"github.com/gocolly/colly/v2"
 )
 
@@ -54,9 +55,14 @@ func New(workers int, startURL string, maxDepth int, includePatterns, excludePat
 	// Compile regex patterns
 	c.includePatterns = make([]*regexp.Regexp, 0, len(includePatterns))
 	for _, pattern := range includePatterns {
+		logger.Debugf("Compiling include pattern: %q", pattern)
+		if pattern == "" {
+			logger.Warningf("Empty include pattern will not match any URLs")
+			continue
+		}
 		re, err := regexp.Compile(pattern)
 		if err != nil {
-			fmt.Printf("Warning: invalid include pattern %q: %v\n", pattern, err)
+			logger.Warningf("Invalid include pattern %q: %v", pattern, err)
 			continue
 		}
 		c.includePatterns = append(c.includePatterns, re)
@@ -64,9 +70,10 @@ func New(workers int, startURL string, maxDepth int, includePatterns, excludePat
 
 	c.excludePatterns = make([]*regexp.Regexp, 0, len(excludePatterns))
 	for _, pattern := range excludePatterns {
+		logger.Debugf("Compiling exclude pattern: %q", pattern)
 		re, err := regexp.Compile(pattern)
 		if err != nil {
-			fmt.Printf("Warning: invalid exclude pattern %q: %v\n", pattern, err)
+			logger.Warningf("Invalid exclude pattern %q: %v", pattern, err)
 			continue
 		}
 		c.excludePatterns = append(c.excludePatterns, re)
@@ -97,25 +104,31 @@ func (c *Crawler) Run() error {
 	c.collector.OnHTML("a[href]", func(e *colly.HTMLElement) {
 		link := e.Request.AbsoluteURL(e.Attr("href"))
 		if link == "" {
+			logger.Debugf("Found empty link, skipping")
 			return
 		}
+
+		logger.Debugf("Found link: %s", link)
 
 		// Skip if already visited
 		c.visitedMutex.RLock()
 		visited := c.visited[link]
 		c.visitedMutex.RUnlock()
 		if visited {
+			logger.Debugf("Already visited: %s, skipping", link)
 			return
 		}
 
 		// Check URL against filter patterns
 		if c.shouldSkipURL(link) {
+			logger.Debugf("Filtered out by patterns: %s, skipping", link)
 			c.incrementSkipped()
 			return
 		}
 
 		// Check if it's a potential installer file
 		if c.isPotentialInstallerURL(link) {
+			logger.Infof("Potential installer: %s, sending to downloader", link)
 			c.sendToDownloader(link)
 			return
 		}
@@ -133,9 +146,10 @@ func (c *Crawler) Run() error {
 		}
 
 		// Follow the link
+		logger.Debugf("Following link: %s", link)
 		err := e.Request.Visit(link)
 		if err != nil {
-			fmt.Printf("Failed to visit %s: %v\n", link, err)
+			logger.Warningf("Failed to visit %s: %v", link, err)
 		}
 	})
 
@@ -144,17 +158,45 @@ func (c *Crawler) Run() error {
 			r.Abort()
 			return
 		}
-		fmt.Printf("Visiting %s\n", r.URL.String())
+		logger.Infof("Visiting %s (Depth: %d)", r.URL.String(), r.Depth)
 	})
 
+	c.collector.OnResponse(func(r *colly.Response) {
+		logger.Debugf("Got response from %s: status=%d, length=%d",
+			r.Request.URL, r.StatusCode, len(r.Body))
+
+		// Print first 200 chars of body in debug mode
+		if logger.LogLevel >= logger.LevelDebug {
+			preview := string(r.Body)
+			if len(preview) > 200 {
+				preview = preview[:200] + "..."
+			}
+			logger.Debugf("Response preview: %s", preview)
+		}
+	})
+
+	c.collector.OnError(func(r *colly.Response, err error) {
+		logger.Warningf("Error on %s: %v", r.Request.URL, err)
+	})
+
+	// Print debug info before starting
+	logger.Infof("Crawler starting with settings:")
+	logger.Infof("  Start URL: %s", c.startURL)
+	logger.Infof("  Max depth: %d", c.maxDepth)
+	logger.Debugf("  Include patterns: %d patterns", len(c.includePatterns))
+	logger.Debugf("  Exclude patterns: %d patterns", len(c.excludePatterns))
+
 	// Start the crawler
+	logger.Infof("Starting the crawl at %s", c.startURL)
 	err = c.collector.Visit(c.startURL)
 	if err != nil {
 		return fmt.Errorf("failed to start crawler: %w", err)
 	}
 
 	// Wait for crawling to complete
+	logger.Infof("Waiting for crawling to complete...")
 	c.collector.Wait()
+	logger.Infof("Crawling completed")
 
 	// Signal completion
 	close(c.done)
@@ -196,10 +238,12 @@ func (c *Crawler) shouldSkipURL(url string) bool {
 		for _, re := range c.includePatterns {
 			if re.MatchString(url) {
 				matched = true
+				logger.Debugf("URL %s matched include pattern %v", url, re)
 				break
 			}
 		}
 		if !matched {
+			logger.Debugf("URL %s did not match any include patterns, skipping", url)
 			return true
 		}
 	}
@@ -207,6 +251,7 @@ func (c *Crawler) shouldSkipURL(url string) bool {
 	// If URL matches any exclude pattern, skip it
 	for _, re := range c.excludePatterns {
 		if re.MatchString(url) {
+			logger.Debugf("URL %s matched exclude pattern %v, skipping", url, re)
 			return true
 		}
 	}
@@ -223,6 +268,7 @@ func (c *Crawler) isPotentialInstallerURL(url string) bool {
 
 	for _, ext := range knownExtensions {
 		if strings.HasSuffix(strings.ToLower(url), ext) {
+			logger.Debugf("URL %s has installer extension %s", url, ext)
 			return true
 		}
 	}
@@ -236,8 +282,9 @@ func (c *Crawler) sendToDownloader(url string) {
 	select {
 	case c.downloadQueue <- url:
 		c.incrementQueued()
+		logger.Debugf("Sent to download queue: %s", url)
 	default:
-		fmt.Printf("Warning: Download queue is full, skipping %s\n", url)
+		logger.Warningf("Download queue is full, skipping %s", url)
 	}
 }
 

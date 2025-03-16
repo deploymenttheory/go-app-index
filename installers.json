@@ -1,0 +1,1260 @@
+{
+  "last_updated": "2025-03-16T10:06:00.093939Z",
+  "stats": {
+    "FilesStored": 125,
+    "UniqueHashes": 125,
+    "LastUpdatedAt": "2025-03-16T10:06:00.093939Z"
+  },
+  "installers": [
+    {
+      "filename": "AdiumX_0.89.1.dmg",
+      "source_url": "https://adiumx.cachefly.net/AdiumX_0.89.1.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-15T21:43:34.297402Z",
+      "sha3_hash": "d900897c1ccaff4b583fed7c2f86f0ca1184f23954e9e69cb08006453bc6bf5c",
+      "file_size_bytes": 11721234,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.0.6.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.0.6.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-15T21:43:34.236909Z",
+      "sha3_hash": "076addc44627438e6ccddf1b046b901dae452c7fd82f9b0d886597ff01aef36d",
+      "file_size_bytes": 13795246,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.3.10.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.3.10.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-15T21:43:33.254612Z",
+      "sha3_hash": "5ab8ebd44c514c142d5667f265c6ecd5de0010096dbab60a64dabd4f15e99e76",
+      "file_size_bytes": 22369877,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.4.5.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.4.5.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-15T21:43:33.204421Z",
+      "sha3_hash": "77f54d70bde81d1bdcd06fd8f020225fd48e9a9d639f0f6a2f0de6a09aea9fb9",
+      "file_size_bytes": 23065688,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.5.10.2.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.5.10.2.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-15T21:45:20.803478Z",
+      "sha3_hash": "aaa4cbbf5640c35fab8b42e39d277e1d87643ccaa91bb11b7c957b5a483f97b9",
+      "file_size_bytes": 25329166,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.5.10.4.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.5.10.4.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-15T21:43:32.880019Z",
+      "sha3_hash": "55b850d88908ec4c2b3157bfaeb0c23b6e1f427431d631aec08fbd62ed9494ac",
+      "file_size_bytes": 21140435,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.5.10.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.5.10.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-15T21:43:33.302579Z",
+      "sha3_hash": "889d4d45acdddd7c3e53659916dc56fc4bf2b2760acc1a12419513a30ef97cb1",
+      "file_size_bytes": 24595712,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "1PasswordSetup-arm64-latest.exe",
+      "source_url": "https://c.1password.com/dist/1P/win8/arm64/1PasswordSetup-arm64-latest.exe",
+      "website_domain": "c.1password.com",
+      "discovered_at": "2025-03-15T21:34:05.889355Z",
+      "sha3_hash": "912af9bf95659d6078f014fdad4e4c3549f78647e515be035b7962f226a3d8f1",
+      "file_size_bytes": 179661152,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.10.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.10/op_apple_universal_v2.0.0-beta.10.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:33.168475Z",
+      "sha3_hash": "305708768b42f1b4871596523940faf137597d746d13189681e299b1e2934a6d",
+      "file_size_bytes": 9673038,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.11.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.11/op_apple_universal_v2.0.0-beta.11.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:32.649812Z",
+      "sha3_hash": "8ae15af7c715e19afde83019a9647c9502b776663a29ffd656f83ea55f8e188c",
+      "file_size_bytes": 9673445,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.12.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.12/op_apple_universal_v2.0.0-beta.12.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:32.468377Z",
+      "sha3_hash": "cc094b4c96d3e4685054022ba2da161af0e2f35f6ba8ec6543bfa0fda8107f2f",
+      "file_size_bytes": 9674791,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.13.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.13/op_apple_universal_v2.0.0-beta.13.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:31.660696Z",
+      "sha3_hash": "a6cdb8cb53f9aa574e459971721581798013aa1a8d03a64e6e1c13af7a36ee7d",
+      "file_size_bytes": 9849279,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.14.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.14/op_apple_universal_v2.0.0-beta.14.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:31.574998Z",
+      "sha3_hash": "17570f5665448fc09a6b8ad780404d93b472e658296e2b9a2401ca9edc839e7e",
+      "file_size_bytes": 9855286,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.15.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.15/op_apple_universal_v2.0.0-beta.15.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:31.482477Z",
+      "sha3_hash": "d0604c91b36162ba6b779c876ac168e8d1d9f09ef568e35d5a92d0c32249e2e9",
+      "file_size_bytes": 9855974,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.16.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.16/op_apple_universal_v2.0.0-beta.16.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:31.190993Z",
+      "sha3_hash": "7d626f93d7d3a499e35058c2e7f9325baf3b4cfcff449668987e6a81f87a4742",
+      "file_size_bytes": 9857226,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.3.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.3/op_apple_universal_v2.0.0-beta.3.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:34.77083Z",
+      "sha3_hash": "8316a54423a02ddb0287ef01683509c6d116dcaa947318f9c7cb85282a5a8f58",
+      "file_size_bytes": 9091549,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.4.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.4/op_apple_universal_v2.0.0-beta.4.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:34.442053Z",
+      "sha3_hash": "5b734926b629bee8eec27a1eaf288659d76f226ca8e73cbba8ceb5a9c57533e6",
+      "file_size_bytes": 9142032,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.5.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.5/op_apple_universal_v2.0.0-beta.5.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:34.526598Z",
+      "sha3_hash": "fc3338ecbe3ae43072d18cb7b9ac5e5e2ec5cdee4e71fe491372d45be9eb8061",
+      "file_size_bytes": 9187060,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.6.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.6/op_apple_universal_v2.0.0-beta.6.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:34.061266Z",
+      "sha3_hash": "a5d95c18493d241fde9ea0c8f27c7d2f2594470db8d7c59a944ce3791d2eb350",
+      "file_size_bytes": 9191219,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.7.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.7/op_apple_universal_v2.0.0-beta.7.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:33.376149Z",
+      "sha3_hash": "19c2a89b26e4683ca3e81db6167e5582f9c0e418a2a6d7e3dd763946218b3b50",
+      "file_size_bytes": 9191340,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.8.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.8/op_apple_universal_v2.0.0-beta.8.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:33.054364Z",
+      "sha3_hash": "47e84082dfc3e34d70ec83f49fb9587473633cf485f259e3951616fe5bf145f2",
+      "file_size_bytes": 9646424,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0-beta.9.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0-beta.9/op_apple_universal_v2.0.0-beta.9.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:33.274063Z",
+      "sha3_hash": "2a8195b367ddd95bb727134c3a51268e665665adab88400d4932a1e994903996",
+      "file_size_bytes": 9662719,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0/op_apple_universal_v2.0.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:30.801187Z",
+      "sha3_hash": "ee055da211658f74a920131b39a414b21853c710dae7e573556ad45633203085",
+      "file_size_bytes": 9857123,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.1/op_apple_universal_v2.0.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:29.283898Z",
+      "sha3_hash": "3efad65b187d175944130352ead4b7b647cc2a17976a151a730dcc46d5207012",
+      "file_size_bytes": 9937870,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.0.2.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.2/op_apple_universal_v2.0.2.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:30.068399Z",
+      "sha3_hash": "95912f880079bc83f8438969fc787fcd6ea9fec213520615cfb78a3258794334",
+      "file_size_bytes": 9938440,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.1.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.1.0/op_apple_universal_v2.1.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:30.104489Z",
+      "sha3_hash": "e64fabb32b7ea9725380c2160fdf6db506e1caaaab90c44bfb4990cee76c925b",
+      "file_size_bytes": 9945281,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.10.0-beta.02.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.10.0-beta.02/op_apple_universal_v2.10.0-beta.02.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:19.082698Z",
+      "sha3_hash": "99313d13bca410961e0156b5160568d39edeb8d52910492d333e6380ee945799",
+      "file_size_bytes": 14533173,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.10.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.10.0/op_apple_universal_v2.10.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:19.031164Z",
+      "sha3_hash": "88205bd4b9589d2ee26fe567ed1ed2e3714ff230ffc9904da11296352548cf8d",
+      "file_size_bytes": 14682010,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.11.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.11.0/op_apple_universal_v2.11.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:19.031992Z",
+      "sha3_hash": "2f0a9464cfe4fd609e5cb1ff88398d1c9a70ab1f6505255650eaa09f754165e7",
+      "file_size_bytes": 14700161,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.12.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.12.0/op_apple_universal_v2.12.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:18.419389Z",
+      "sha3_hash": "1ae4d1081f091a029f7c2baad5896aa4edefa781c1cfe911f5137af474d34971",
+      "file_size_bytes": 14716471,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.13.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.13.1/op_apple_universal_v2.13.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:18.196342Z",
+      "sha3_hash": "26740557528de75b3182ae7892400456d72306d4be04ff153ed44a7feb626f43",
+      "file_size_bytes": 14804605,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.14.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.14.0/op_apple_universal_v2.14.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:16.608504Z",
+      "sha3_hash": "788cc0b8501d646424ae0a12e16776e951e61086527751b0b7401d802b0700eb",
+      "file_size_bytes": 15132896,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.15.0-beta.03.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.15.0-beta.03/op_apple_universal_v2.15.0-beta.03.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:15.868844Z",
+      "sha3_hash": "68ce9b752184f735817e2cdae71ca30dc42a6d7fac5bd49f6386d5fd4366d1b7",
+      "file_size_bytes": 15165061,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.16.0-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.16.0-beta.01/op_apple_universal_v2.16.0-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:16.465797Z",
+      "sha3_hash": "48ad03fa782c8982fe32dd9aef9e9a73724966b0b12c2a5727f6802237fee8cb",
+      "file_size_bytes": 15305037,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.16.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.16.0/op_apple_universal_v2.16.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:16.493143Z",
+      "sha3_hash": "6effc7cb2d7492f671f84a1421d4a1dbb9db8f62575ec36dfb4c0663b2839d55",
+      "file_size_bytes": 15367356,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.16.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.16.1/op_apple_universal_v2.16.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:15.78084Z",
+      "sha3_hash": "23bb5c51340897fa4a60b48de0885d56881d59a4b76f81cb263f3786d2efd143",
+      "file_size_bytes": 15369936,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.17.0-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.17.0-beta.01/op_apple_universal_v2.17.0-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:14.732353Z",
+      "sha3_hash": "2ff0acc028926edded85b48b98fb838d09694e183bbbe4175eff9cd35349679f",
+      "file_size_bytes": 15549296,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.17.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.17.0/op_apple_universal_v2.17.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:14.483503Z",
+      "sha3_hash": "e028362a543f4f0923c9a9f1da55ebd87aeba13f02fb03ee86a39c519f5784b8",
+      "file_size_bytes": 16255054,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.18.0-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.18.0-beta.01/op_apple_universal_v2.18.0-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:14.305905Z",
+      "sha3_hash": "fe670283a7c6785bd8d92dcfe031c9883f2d23fc10dffc176a04375add27c814",
+      "file_size_bytes": 16319470,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.18.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.18.0/op_apple_universal_v2.18.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:14.249357Z",
+      "sha3_hash": "18a31114e2231f5aaa7fcd4edd75949a542b433fa584b64e4935854b8be2dccc",
+      "file_size_bytes": 16276250,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.19.0-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.19.0-beta.01/op_apple_universal_v2.19.0-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:13.673242Z",
+      "sha3_hash": "700da59ac64ec61b7cb31258326a853b3685bc5f81e54f47ae83e4eb43431d56",
+      "file_size_bytes": 16354088,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.19.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.19.0/op_apple_universal_v2.19.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:13.064285Z",
+      "sha3_hash": "51ccad575c88cddd2039695af2a25f5025471bc448c67ad77b4527ae917f57a0",
+      "file_size_bytes": 16323104,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.2.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.2.0/op_apple_universal_v2.2.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:29.61044Z",
+      "sha3_hash": "e86e12b05b195b4586334467847ec072d6cce39a58f7bf8c3e6e85c3eefbc5d8",
+      "file_size_bytes": 9951638,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.20.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.20.0/op_apple_universal_v2.20.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:12.51906Z",
+      "sha3_hash": "5e44f9c8ff03dacd97d8707a792baee24b5e099f7b61e0bfd5edfedf2fa08ead",
+      "file_size_bytes": 16971237,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.21.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.21.0/op_apple_universal_v2.21.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:12.190708Z",
+      "sha3_hash": "63f86eefd3cb760813d748473dc23536287a09b3ff64122e6efdb516e16fccc3",
+      "file_size_bytes": 16998392,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.22.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.22.0/op_apple_universal_v2.22.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:12.103936Z",
+      "sha3_hash": "89b1f016c06e8c756a7ae08cadd3911f243cb489f0531d443a227fd3681042b4",
+      "file_size_bytes": 17039428,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.23.0-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.23.0-beta.01/op_apple_universal_v2.23.0-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:11.287738Z",
+      "sha3_hash": "aa9bf4b82ba6addf6d6e01cdfe25d2dc25c11744986872223668731a2a3e21c2",
+      "file_size_bytes": 17112107,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.23.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.23.0/op_apple_universal_v2.23.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:11.885981Z",
+      "sha3_hash": "4005b1babb12ea0600f149d2deae17b9894b141efebed134a8bcf1c7a69a2f86",
+      "file_size_bytes": 17064907,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.24.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.24.0/op_apple_universal_v2.24.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:10.790058Z",
+      "sha3_hash": "fce054745f7ce808a87a06e8aaa133f7829c572abd5d59b31e27217be4e7bd4d",
+      "file_size_bytes": 17080299,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.25.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.25.0/op_apple_universal_v2.25.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:10.130741Z",
+      "sha3_hash": "7320f5f6a686918600bad293bc3d8049224de54d6865f35dabcbe0a321d3c8d4",
+      "file_size_bytes": 17154141,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.25.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.25.1/op_apple_universal_v2.25.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:09.968318Z",
+      "sha3_hash": "d7437521bf9eb1e4ec2cf8b2ff8e22ec16e39cc8512ae975d64ffcfcaf32341c",
+      "file_size_bytes": 17203805,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.26.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.26.0/op_apple_universal_v2.26.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:09.850905Z",
+      "sha3_hash": "5d30068988416d5dcc53ea96270e775b0de34384102d87f1fa3f41034c7254b7",
+      "file_size_bytes": 17218938,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.26.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.26.1/op_apple_universal_v2.26.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:09.331481Z",
+      "sha3_hash": "a729e84f108fa5c712a66eab706e19cecceec51d300c0181056fd6d042bcee51",
+      "file_size_bytes": 17317121,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.27.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.27.0/op_apple_universal_v2.27.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:08.981552Z",
+      "sha3_hash": "4a96c701a767cafd14687e8011b9624c5f33d0af5b3bfab8f0c39d00c7e863ca",
+      "file_size_bytes": 17316490,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.28.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.28.0/op_apple_universal_v2.28.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:05.55488Z",
+      "sha3_hash": "a29f2538f328e70b0eda9f256f50741c76438475bc315b8df855d0073144404d",
+      "file_size_bytes": 17261683,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.29.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.29.0/op_apple_universal_v2.29.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:05.150992Z",
+      "sha3_hash": "949f5d887e5abf098fbd59c1facf48056497344fecca87f35a29d58d7b1d3384",
+      "file_size_bytes": 17283467,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.3.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.3.0/op_apple_universal_v2.3.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:29.731569Z",
+      "sha3_hash": "fbbf63533d12ab88f65ce3aa65a7d571dddd3db300bb8cfb5d6e51ec98191deb",
+      "file_size_bytes": 10004077,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.3.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.3.1/op_apple_universal_v2.3.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:28.661314Z",
+      "sha3_hash": "c167c36e0342e7c6781009341a8b4149c36487c35dcd4bbbc770a141a58ffcb3",
+      "file_size_bytes": 10007793,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.30.0-beta.02.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.30.0-beta.02/op_apple_universal_v2.30.0-beta.02.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:01.933697Z",
+      "sha3_hash": "eb2fce1cfad5547c22b5529cb2e0b864821f288bde1c0505ccaf17b851c0486e",
+      "file_size_bytes": 17326432,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.30.0-beta.03.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.30.0-beta.03/op_apple_universal_v2.30.0-beta.03.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:01.717496Z",
+      "sha3_hash": "e7961fe38fbeac79454761f4caccaec613d1c4fead4c1dbc17b9dc264b108d59",
+      "file_size_bytes": 16892196,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.30.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.30.0/op_apple_universal_v2.30.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:34:58.930374Z",
+      "sha3_hash": "07a656b8db4f13b73aac0fd2f8c2d41c9d47e1fa0f550e26b1e2727affa1b676",
+      "file_size_bytes": 16830523,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.30.3.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.30.3/op_apple_universal_v2.30.3.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:34:57.427206Z",
+      "sha3_hash": "4c884af7a1028e43d89e16f01c52a92804fad1ec85c08f48e0cc1e30deaf8097",
+      "file_size_bytes": 16958893,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.4.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.4.0/op_apple_universal_v2.4.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:27.811067Z",
+      "sha3_hash": "d56fca0ddacf2f6f555371969db81fa98b85244ee25e9e96bdb653bb1ee87774",
+      "file_size_bytes": 10017609,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.4.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.4.1/op_apple_universal_v2.4.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:28.592201Z",
+      "sha3_hash": "031598f7a038d9da1ccabd0de5ba04d62a33736d8c43d628a738ffb8e038005e",
+      "file_size_bytes": 10017840,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.5.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.5.0/op_apple_universal_v2.5.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:28.524823Z",
+      "sha3_hash": "26d89e5af039a3c26498b8458a091cc76e994a0168b9676399cc4af211c7435a",
+      "file_size_bytes": 10037617,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.5.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.5.1/op_apple_universal_v2.5.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:27.839761Z",
+      "sha3_hash": "cb63c6380e1c82ae8bcd51f55a162c037d1f1852e098627a3367ac9965874792",
+      "file_size_bytes": 10036549,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.6.0-beta.05.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.6.0-beta.05/op_apple_universal_v2.6.0-beta.05.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:26.836219Z",
+      "sha3_hash": "c81db4a6ff4c6ee1588b2401b23050fd36d7c980908d3f63b36562eae721edfa",
+      "file_size_bytes": 10020633,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.6.0-beta.06.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.6.0-beta.06/op_apple_universal_v2.6.0-beta.06.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:26.820022Z",
+      "sha3_hash": "fb7c9cd85fd84cb41d6889bb8745a1594e77e5ce67b3635ecd765d16fe26053e",
+      "file_size_bytes": 10112609,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.6.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.6.0/op_apple_universal_v2.6.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:26.697165Z",
+      "sha3_hash": "6dbae8d27a5d77235890988f91a42520f9c4661c2b15b91705daae0238387514",
+      "file_size_bytes": 10102528,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.6.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.6.1/op_apple_universal_v2.6.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:26.410666Z",
+      "sha3_hash": "b36b1de5e1cde94366b332b9c5c2751e7da6a400879c2daf5174b4979d392f04",
+      "file_size_bytes": 10159947,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.6.2.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.6.2/op_apple_universal_v2.6.2.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:25.066455Z",
+      "sha3_hash": "db2201e35d05c2da94e213028ded3d31e0ab8512f71c01159cb13cce3a1cb2ad",
+      "file_size_bytes": 10161722,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.7.0-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.7.0-beta.01/op_apple_universal_v2.7.0-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:26.041154Z",
+      "sha3_hash": "25b4d8fbe823cf9c4fc126bf6779b3ee258b042f79052754fcea418f14154c20",
+      "file_size_bytes": 10165579,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.7.0-beta.03.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.7.0-beta.03/op_apple_universal_v2.7.0-beta.03.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:25.21002Z",
+      "sha3_hash": "19d8f4bb0e6a7c8b4265975f44a9df81d26e77b0c0e1d432598d26fe1a06544c",
+      "file_size_bytes": 10165643,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.7.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.7.0/op_apple_universal_v2.7.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:24.794056Z",
+      "sha3_hash": "7fd0a540a2e866a68ae2ce56fcfb4db8c645ba50b0c244412e37eb0fba45cf5f",
+      "file_size_bytes": 10398483,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.7.1-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.7.1-beta.01/op_apple_universal_v2.7.1-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:24.963669Z",
+      "sha3_hash": "ac31f331a7f86765a825f5de3b9cee976948ce76bc7672cf52e96e57970fb3c0",
+      "file_size_bytes": 10168185,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.7.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.7.1/op_apple_universal_v2.7.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:24.486621Z",
+      "sha3_hash": "d3ca57c216edd29a39afe44055379da352c06b85630f3ecbabd09ec785345842",
+      "file_size_bytes": 10407954,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.7.2.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.7.2/op_apple_universal_v2.7.2.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:22.694763Z",
+      "sha3_hash": "c73c3ffbcbb83a7288505a2629606fd1ec882aebdafded6d6c4fdb38445bc18d",
+      "file_size_bytes": 11257032,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.7.3.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.7.3/op_apple_universal_v2.7.3.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:21.720206Z",
+      "sha3_hash": "b62e110195a079c1fe532451647011574d8303d27fb8d38726a2dbf9dbfec064",
+      "file_size_bytes": 11778378,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.01.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.01/op_apple_universal_v2.8.0-beta.01.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:24.195011Z",
+      "sha3_hash": "7cdb298fc0391c55ee7f1906159c4f352ee3b98fe1131d2349593a67d21dfd23",
+      "file_size_bytes": 10419301,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.02.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.02/op_apple_universal_v2.8.0-beta.02.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:23.421096Z",
+      "sha3_hash": "80cbdac0668cad14a7f02c3ff267c157e3fe53a694c8d8a12782ceb13f0cab76",
+      "file_size_bytes": 10466704,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.03.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.03/op_apple_universal_v2.8.0-beta.03.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:23.334799Z",
+      "sha3_hash": "d07d8f89cb1de328aeeaaa180020336353a7dfb3dd5adf79e6e0fc6a7605e706",
+      "file_size_bytes": 10479206,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.04.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.04/op_apple_universal_v2.8.0-beta.04.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:22.959036Z",
+      "sha3_hash": "81fa9e2bce8cadcbbe50db67d2005f7008ae608ed4d6f57bfde54791f02ec7f5",
+      "file_size_bytes": 10766737,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.05.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.05/op_apple_universal_v2.8.0-beta.05.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:23.040096Z",
+      "sha3_hash": "5939138787ae5c2c560e70ea46ebabccdfa96792a7ef7b35c4f8e2477a154f6a",
+      "file_size_bytes": 11248958,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.06.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.06/op_apple_universal_v2.8.0-beta.06.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:21.944041Z",
+      "sha3_hash": "f91a1d183058f4b05c179e802e07af789d4a645e83b9d311ef847b9d642ba54d",
+      "file_size_bytes": 11795230,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.09.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.09/op_apple_universal_v2.8.0-beta.09.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:21.223204Z",
+      "sha3_hash": "788c47a174fdaba55fff168da7da9707334991bfc3ab631b87900969d9467e32",
+      "file_size_bytes": 15863853,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0-beta.10.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0-beta.10/op_apple_universal_v2.8.0-beta.10.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:21.094619Z",
+      "sha3_hash": "f1f1cf4a353604f2b3543bfeedbc9858fe6142d2bc889f39ed0f037646bf55e8",
+      "file_size_bytes": 14573425,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.8.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.8.0/op_apple_universal_v2.8.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:21.188369Z",
+      "sha3_hash": "d271296daf79c2abcc267471028776c8c1c845b64b2a6107a0c09c6562526827",
+      "file_size_bytes": 14656877,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.9.0.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.9.0/op_apple_universal_v2.9.0.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:20.550404Z",
+      "sha3_hash": "76704285805862fcbee267e2bb7e9b3423e640b5ed774aab183486fc5ba1a09f",
+      "file_size_bytes": 14655756,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "op_apple_universal_v2.9.1.pkg",
+      "source_url": "https://cache.agilebits.com/dist/1P/op2/pkg/v2.9.1/op_apple_universal_v2.9.1.pkg",
+      "website_domain": "cache.agilebits.com",
+      "discovered_at": "2025-03-15T21:35:20.029536Z",
+      "sha3_hash": "d6e3993e03f028c12f04405221cee5f6d3743f1d2924b41bee0a8a2ecf3562d1",
+      "file_size_bytes": 14516716,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "NY.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/NY.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:44:59.96807Z",
+      "sha3_hash": "d6c40ecfd18dd1511688296330a1a88ac50bfe59d054fecbfae8fa2203354695",
+      "file_size_bytes": 5501470,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Arabic.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Arabic.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:45:00.553024Z",
+      "sha3_hash": "696cca8275efa0008321bb7e879f3ad1f5396ccf93b41972f6222f1c4b05bca1",
+      "file_size_bytes": 1495864,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Armenian.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Armenian.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:45:01.14655Z",
+      "sha3_hash": "c20c8f8366694e27e75d9f74db667ae4d851cb588ebc3d346b6f008e0c88ad66",
+      "file_size_bytes": 969750,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Compact.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Compact.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:44:58.566141Z",
+      "sha3_hash": "61cee234feb40372fb8e2b5e368acf2ecc6c4da5fd9e84909f40e82560fa0cb6",
+      "file_size_bytes": 155169014,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Georgian.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Georgian.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:45:01.774536Z",
+      "sha3_hash": "bf1ba30e328b139a75624c4f4cdc975b939023d66c3d2244fe152d585ef683a6",
+      "file_size_bytes": 998590,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Hebrew.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Hebrew.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:45:02.396646Z",
+      "sha3_hash": "ed0ea4de18ad503620854125a2d9bbb68bf64479971f868a9ef0f0c208cd9395",
+      "file_size_bytes": 1663934,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Mono.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Mono.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:44:59.084235Z",
+      "sha3_hash": "7af48a572e8b854775de12ee04d8f7152d9873607ab8d32a804837cf030676be",
+      "file_size_bytes": 1605572,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Pro.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:45:40.616753Z",
+      "sha3_hash": "568b31a742ec753cfe66ce96d446963ed0ce6801292a804915fe4d328b8fb031",
+      "file_size_bytes": 190896480,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "SF-Symbols-6.dmg",
+      "source_url": "https://devimages-cdn.apple.com/design/resources/download/SF-Symbols-6.dmg",
+      "website_domain": "devimages-cdn.apple.com",
+      "discovered_at": "2025-03-15T21:45:13.092479Z",
+      "sha3_hash": "87603a54e43f3ff3d21e37130fd4fdc163f06060d39654dbbe24ef16bd4764c1",
+      "file_size_bytes": 385380234,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "RoboHelp_16_LREFDJ.dmg",
+      "source_url": "https://download.adobe.com/pub/adobe/robohelp/2022.2/RoboHelp_16_LREFDJ.dmg",
+      "website_domain": "download.adobe.com",
+      "discovered_at": "2025-03-16T10:05:49.111204Z",
+      "sha3_hash": "0b4b5dfe159b6e7d6ba2913c7138f3ed2a922e9174fa1db5053dab5771efc454",
+      "file_size_bytes": 1051334615,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "RoboHelp_16_LREFDJ.dmg",
+      "source_url": "https://download.adobe.com/pub/adobe/robohelp/2022.x/RoboHelp_16_LREFDJ.dmg",
+      "website_domain": "download.adobe.com",
+      "discovered_at": "2025-03-16T10:05:51.911765Z",
+      "sha3_hash": "66dd806d5ffcf63c8aa8800bc25a3d090d10d69b35a1a64dff704cbffa4ee236",
+      "file_size_bytes": 1042997795,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "RoboHelp_16_LREFDJ.dmg",
+      "source_url": "https://download.adobe.com/pub/adobe/robohelp/2022.3/RoboHelp_16_LREFDJ.dmg",
+      "website_domain": "download.adobe.com",
+      "discovered_at": "2025-03-16T10:05:54.163165Z",
+      "sha3_hash": "3fa6594f83be68a4648e9c15b062454ec85dd8ed7e3ff1b3daeefaa0ebb158cb",
+      "file_size_bytes": 1055888702,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "RoboHelp_16_LREFDJ.dmg",
+      "source_url": "https://download.adobe.com/pub/adobe/robohelp/2022.1/RoboHelp_16_LREFDJ.dmg",
+      "website_domain": "download.adobe.com",
+      "discovered_at": "2025-03-16T10:05:57.376506Z",
+      "sha3_hash": "739b98ef727bb19111c5378a4a9c0d89a4375fcdacb15d010f1190708a3ce0ea",
+      "file_size_bytes": 1049662126,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "1PasswordSetup-latest.BETA.exe",
+      "source_url": "https://downloads.1password.com/win/1PasswordSetup-latest.BETA.exe",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:17:24.55857Z",
+      "sha3_hash": "c7757a5c6c1fdaa263486e49e37b21667fbdf12e920d8c905b3e13937065b8e9",
+      "file_size_bytes": 178164576,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "1PasswordSetup-latest.exe",
+      "source_url": "https://downloads.1password.com/win/1PasswordSetup-latest.exe",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:17:23.666987Z",
+      "sha3_hash": "0864bcdb21a4c1aeb1e2f677761bf8a2a9805f9bd48d4240a9381a2578c757b7",
+      "file_size_bytes": 177581408,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "1password-cli-386-latest.deb",
+      "source_url": "https://downloads.1password.com/linux/debian/386/stable/1password-cli-386-latest.deb",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:49.955487Z",
+      "sha3_hash": "a87925f861ad90a0cf8975b2225d35d5cb89242778a8d7b31483a0b36e106ff8",
+      "file_size_bytes": 5901946,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "1password-cli-amd64-latest.deb",
+      "source_url": "https://downloads.1password.com/linux/debian/amd64/stable/1password-cli-amd64-latest.deb",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:48.133845Z",
+      "sha3_hash": "2530898a05ed8e070e9565042bb3b3fc1dfa0c86b3ddae313ad12bd532083b09",
+      "file_size_bytes": 6499598,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "1password-cli-arm-latest.deb",
+      "source_url": "https://downloads.1password.com/linux/debian/arm/stable/1password-cli-arm-latest.deb",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:50.751198Z",
+      "sha3_hash": "4dda0732a5a925da387bb8dcaa1c02f8ab05646406617e38396bc1d885886d90",
+      "file_size_bytes": 3077262,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "1password-cli-arm64-latest.deb",
+      "source_url": "https://downloads.1password.com/linux/debian/arm64/stable/1password-cli-arm64-latest.deb",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:51.627234Z",
+      "sha3_hash": "b674f0c65f2c3d9afbf0ba541ea1798724438c6dc91a737dcd07b939400e98fe",
+      "file_size_bytes": 5617422,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "1password-cli-latest.aarch64.rpm",
+      "source_url": "https://downloads.1password.com/linux/rpm/stable/aarch64/1password-cli-latest.aarch64.rpm",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:53.409797Z",
+      "sha3_hash": "f34c0affb0a9108d174d076382a2b8fe93115e8574c3f73886af725c179f78e6",
+      "file_size_bytes": 6318088,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "1password-cli-latest.armv7l.rpm",
+      "source_url": "https://downloads.1password.com/linux/rpm/stable/armv7l/1password-cli-latest.armv7l.rpm",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:54.003552Z",
+      "sha3_hash": "acda75854838497576a8ac99b08a8962d138b2e2b1810700c542de40712d09f1",
+      "file_size_bytes": 6266708,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "1password-cli-latest.i386.rpm",
+      "source_url": "https://downloads.1password.com/linux/rpm/stable/i386/1password-cli-latest.i386.rpm",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:52.530636Z",
+      "sha3_hash": "c17affb8fe5b52e1698eba1374ccaa537d4ceb2da727cef0ee68e91303d7034a",
+      "file_size_bytes": 6607560,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "1password-cli-latest.x86_64.rpm",
+      "source_url": "https://downloads.1password.com/linux/rpm/stable/x86_64/1password-cli-latest.x86_64.rpm",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:34:52.176028Z",
+      "sha3_hash": "d9de59f4bac0cfc75d166121211506f0c0f5e1f1ff09af707f08c55d9e529835",
+      "file_size_bytes": 7263192,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "1password-latest.deb",
+      "source_url": "https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:17:44.42477Z",
+      "sha3_hash": "f145d19339543d5ab18e9305011988d158e5cfc88b9212f4819fc57fbc456dae",
+      "file_size_bytes": 142025838,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "1password-latest.rpm",
+      "source_url": "https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-15T21:17:43.814188Z",
+      "sha3_hash": "49345488f449c7be32e4efa038cc66ecb51b8be915480e78f39e5f1f86b17ed2",
+      "file_size_bytes": 135256616,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": ".exe",
+      "source_url": "https://en.wikipedia.org/wiki/.exe",
+      "website_domain": "en.wikipedia.org",
+      "discovered_at": "2025-03-15T21:43:58.535695Z",
+      "sha3_hash": "9294e1a568f59274c35097c2f61401c533bffa632b40194ca8f872e41056bd8e",
+      "file_size_bytes": 99527,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "Cmd.exe",
+      "source_url": "https://en.wikipedia.org/wiki/Cmd.exe",
+      "website_domain": "en.wikipedia.org",
+      "discovered_at": "2025-03-15T21:43:58.530332Z",
+      "sha3_hash": "84483799b54e795de49680985c901d3bf572e370810fb082c2db9733cfa1ebea",
+      "file_size_bytes": 197022,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "Ntoskrnl.exe",
+      "source_url": "https://en.wikipedia.org/wiki/Ntoskrnl.exe",
+      "website_domain": "en.wikipedia.org",
+      "discovered_at": "2025-03-15T21:43:58.532327Z",
+      "sha3_hash": "d7af3ec0376f62dad582fe66343de6e363cdbd24f6c4afc1acaa88eb26343d51",
+      "file_size_bytes": 146914,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "PhotoshopElements_2024_MacLBS.dmg",
+      "source_url": "https://helpx.adobe.com/content/dam/help/en/download-install/kb/photoshop-elements-downloads/jcr_content/root/content/flex/items/position/position-par/download_section_266/download-2/PhotoshopElements_2024_MacLBS.dmg",
+      "website_domain": "helpx.adobe.com",
+      "discovered_at": "2025-03-16T10:02:56.906679Z",
+      "sha3_hash": "f2925c769547810bd4939842522e85ccac244a54183de94ebf0128bd8f2c1774",
+      "file_size_bytes": 7874310,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "PremiereElements_2024_MacLBS.dmg",
+      "source_url": "https://helpx.adobe.com/content/dam/help/en/download-install/kb/premiere-elements-downloads/jcr_content/root/content/flex/items/position/position-par/download_section_127/download-2/PremiereElements_2024_MacLBS.dmg",
+      "website_domain": "helpx.adobe.com",
+      "discovered_at": "2025-03-16T10:02:56.498438Z",
+      "sha3_hash": "2a5db67323cac9c2b18110d0a3b874e786f6f561131f64580e897891918e8f53",
+      "file_size_bytes": 7730022,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "PremiereElements_2025_LS31_win64.exe",
+      "source_url": "https://pre2025download.adobe.com/AdobeProducts/PRE/25/win64/PremiereElements_2025_LS31_win64.exe",
+      "website_domain": "pre2025download.adobe.com",
+      "discovered_at": "2025-03-16T10:02:58.57054Z",
+      "sha3_hash": "947b648f2b3594a004be8467bca3b9f058eb0ba5ce6eef88d696982e8796c4b9",
+      "file_size_bytes": 8011152,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "PremiereElements_2025_MacLBS.dmg",
+      "source_url": "https://pre2025download.adobe.com/AdobeProducts/PRE/25/macarm64/PremiereElements_2025_MacLBS.dmg",
+      "website_domain": "pre2025download.adobe.com",
+      "discovered_at": "2025-03-16T10:03:03.043628Z",
+      "sha3_hash": "2dab0d0c8cbff4cafb41373fa2f9a4b002d9ce2056420c13ea458af8a0b43fbd",
+      "file_size_bytes": 13974550,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "PhotoshopElements_2025_LS30_win64.exe",
+      "source_url": "https://pse2025download.adobe.com/AdobeProducts/PSE/25/win64/PhotoshopElements_2025_LS30_win64.exe",
+      "website_domain": "pse2025download.adobe.com",
+      "discovered_at": "2025-03-16T10:02:58.659349Z",
+      "sha3_hash": "e4b5608152dd1fd45db243c311f03df030adaa8a170a67e65325188a8aa2cf63",
+      "file_size_bytes": 7635856,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "PhotoshopElements_2025_MacLBS.dmg",
+      "source_url": "https://pse2025download.adobe.com/AdobeProducts/PSE/25/macarm64/PhotoshopElements_2025_MacLBS.dmg",
+      "website_domain": "pse2025download.adobe.com",
+      "discovered_at": "2025-03-16T10:02:59.996563Z",
+      "sha3_hash": "6fca52e7c878c91928f36499a132edd7176361601cef3d15643e5985cf6cb095",
+      "file_size_bytes": 13643316,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "pidgin-2.14.14-offline.exe",
+      "source_url": "https://sourceforge.net/projects/pidgin/files/Pidgin/2.14.14/pidgin-2.14.14-offline.exe",
+      "website_domain": "sourceforge.net",
+      "discovered_at": "2025-03-15T21:45:05.608391Z",
+      "sha3_hash": "94ee888b8cfb09d2ea57a4a08f97d0f2fc0eef2aafbf2dd39e74308db13cdaf1",
+      "file_size_bytes": 138250,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "pidgin-2.14.14.exe",
+      "source_url": "https://sourceforge.net/projects/pidgin/files/Pidgin/2.14.14/pidgin-2.14.14.exe",
+      "website_domain": "sourceforge.net",
+      "discovered_at": "2025-03-15T21:45:04.125053Z",
+      "sha3_hash": "407297e1068c601e0f076184fb4990ab6b36c44c63c20c459fbb236d04749cb4",
+      "file_size_bytes": 137421,
+      "platform": "windows",
+      "file_type": "exe"
+    }
+  ]
+}
