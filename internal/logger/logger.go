@@ -14,6 +14,8 @@ const (
 	colorYellow = "\033[33m"
 	colorBlue   = "\033[34m"
 	colorGray   = "\033[37m"
+	colorGreen  = "\033[32m"
+	colorPurple = "\033[35m"
 )
 
 // Log levels
@@ -57,7 +59,7 @@ func Initialize(infoHandle, debugHandle, warningHandle, errorHandle io.Writer) {
 	// Create the loggers with colored prefixes
 	if useColors {
 		Info = log.New(infoHandle, colorBlue+"INFO: "+colorReset, log.Ldate|log.Ltime|log.Lshortfile)
-		Debug = log.New(debugHandle, colorGray+"DEBUG: "+colorReset, log.Ldate|log.Ltime|log.Lshortfile)
+		Debug = log.New(debugHandle, colorPurple+"DEBUG: "+colorReset, log.Ldate|log.Ltime|log.Lshortfile)
 		Warning = log.New(warningHandle, colorYellow+"WARNING: "+colorReset, log.Ldate|log.Ltime|log.Lshortfile)
 		Error = log.New(errorHandle, colorRed+"ERROR: "+colorReset, log.Ldate|log.Ltime|log.Lshortfile)
 	} else {

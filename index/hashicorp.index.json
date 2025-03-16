@@ -1,0 +1,220 @@
+{
+  "last_updated": "2025-03-16T17:43:54.492554Z",
+  "stats": {
+    "FilesStored": 21,
+    "UniqueHashes": 21,
+    "LastUpdatedAt": "2025-03-16T17:43:54.492554Z"
+  },
+  "installers": [
+    {
+      "filename": "AWSCLIV2.msi",
+      "source_url": "https://awscli.amazonaws.com/AWSCLIV2.msi",
+      "website_domain": "awscli.amazonaws.com",
+      "discovered_at": "2025-03-16T17:38:51.241712Z",
+      "sha3_hash": "255189d8ca7a1d95b41fbad10cedb2ba037e6b3e4a5bcfc36a2a3e2d1bd27ed5",
+      "file_size_bytes": 42889216,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "AWSCLIV2.pkg",
+      "source_url": "https://awscli.amazonaws.com/AWSCLIV2.pkg",
+      "website_domain": "awscli.amazonaws.com",
+      "discovered_at": "2025-03-16T17:38:49.187064Z",
+      "sha3_hash": "07853017ce43cf160f84ae79db5d7c7a96a8bc4010b4a3fb3a88635c82816b59",
+      "file_size_bytes": 41131150,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "mc.exe",
+      "source_url": "https://dl.min.io/client/mc/release/windows-amd64/mc.exe",
+      "website_domain": "dl.min.io",
+      "discovered_at": "2025-03-16T17:42:51.681817Z",
+      "sha3_hash": "af5994a805f28ddee6fd25f9aee8514327acbcfb72493833f8d7dd3cce00d4fb",
+      "file_size_bytes": 31003136,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "GitHubCopilotForXcode.dmg",
+      "source_url": "https://github.com/github/CopilotForXcode/releases/latest/download/GitHubCopilotForXcode.dmg",
+      "website_domain": "github.com",
+      "discovered_at": "2025-03-16T17:43:53.939988Z",
+      "sha3_hash": "f6f861404e34ab30ef5e148dababe2b4fd4187a6c8adb72b235f67b51deba80c",
+      "file_size_bytes": 168377880,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "gh_2.68.1_windows_amd64.msi",
+      "source_url": "https://github.com/cli/cli/releases/download/v2.68.1/gh_2.68.1_windows_amd64.msi",
+      "website_domain": "github.com",
+      "discovered_at": "2025-03-16T17:38:07.878587Z",
+      "sha3_hash": "ead9618a54763dd84a14e363c4897098f06db35daacb8e4f4c55ac0c727baa41",
+      "file_size_bytes": 13680640,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "boundary-desktop_1.0.0_darwin_amd64.dmg",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/1.0.0/boundary-desktop_1.0.0_darwin_amd64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:38:21.60509Z",
+      "sha3_hash": "d185fefb3e89621f27a9cddb3e1549f7dbb74423dcafe5841eeb3be1852e8d77",
+      "file_size_bytes": 112228634,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "boundary-desktop_1.2.0_darwin_amd64.dmg",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/1.2.0/boundary-desktop_1.2.0_darwin_amd64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:38:19.214236Z",
+      "sha3_hash": "cf0d4853a9b6795d083b76ab9f267ab0004410d246ebe9edafed8189abb4ddc4",
+      "file_size_bytes": 112180431,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "boundary-desktop_1.7.0_amd64.deb",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/1.7.0/boundary-desktop_1.7.0_amd64.deb",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:43:15.983863Z",
+      "sha3_hash": "9fd443bfbd5017f9d58dc483af042f48bb96d443782034ac05db8be303dd2e3d",
+      "file_size_bytes": 195205016,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "boundary-desktop_1.7.0_darwin_amd64.dmg",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/1.7.0/boundary-desktop_1.7.0_darwin_amd64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:43:16.618473Z",
+      "sha3_hash": "66f21dcc8eef9ae9b404a3a629dea2aa17350d13d76e9fd4737449adbcafe035",
+      "file_size_bytes": 229589307,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "boundary-desktop_2.3.1_amd64.deb",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/2.3.1/boundary-desktop_2.3.1_amd64.deb",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:34:53.262407Z",
+      "sha3_hash": "07aeb312def975fb1a6f976b690cd86f2c3f080376d9d4eb1939ce3d6e5cabbb",
+      "file_size_bytes": 243803548,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "boundary-desktop_2.3.1_darwin_amd64.dmg",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/2.3.1/boundary-desktop_2.3.1_darwin_amd64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:34:56.905139Z",
+      "sha3_hash": "00a8ef2337cdaad00092210c1636623676282c2ff9ac961369ae924b80099f25",
+      "file_size_bytes": 285063558,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "boundary-desktop_2.3.1_darwin_arm64.dmg",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/2.3.1/boundary-desktop_2.3.1_darwin_arm64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:34:55.769865Z",
+      "sha3_hash": "19867a65f39e75bd49b98bb9d7d94c7b27dfaf8e37f1db81efe0a6a81aae9101",
+      "file_size_bytes": 269406998,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "boundary-installer_0.1.4_darwin_amd64.pkg",
+      "source_url": "https://releases.hashicorp.com/boundary-installer/0.1.4/boundary-installer_0.1.4_darwin_amd64.pkg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:34:58.162157Z",
+      "sha3_hash": "522f7503583af529400f0645994e6c80596163dd2dd74082870678c9a9f6bd77",
+      "file_size_bytes": 295692521,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "boundary-installer_0.1.4_darwin_arm64.pkg",
+      "source_url": "https://releases.hashicorp.com/boundary-installer/0.1.4/boundary-installer_0.1.4_darwin_arm64.pkg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:34:56.619008Z",
+      "sha3_hash": "38ada2a975127dbf8e3d3a446497fbf85577fbce332db38d85ecb4aa9d37ada1",
+      "file_size_bytes": 278902792,
+      "platform": "macos",
+      "file_type": "pkg"
+    },
+    {
+      "filename": "boundary-installer_0.1.4_windows_amd64.msi",
+      "source_url": "https://releases.hashicorp.com/boundary-installer/0.1.4/boundary-installer_0.1.4_windows_amd64.msi",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:35:22.485034Z",
+      "sha3_hash": "0cc3310fc2e8bcfeb0a2329f88d3f61a1516a137d1cbf4a72dda8278297d270d",
+      "file_size_bytes": 306970624,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "vagrant-vmware-utility_1.0.23-1_amd64.deb",
+      "source_url": "https://releases.hashicorp.com/vagrant-vmware-utility/1.0.23/vagrant-vmware-utility_1.0.23-1_amd64.deb",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:37:29.601415Z",
+      "sha3_hash": "ec2be0250b3cf81a5642bd37eb31e7e11d7e64a83b5ef84844721542b455b3ea",
+      "file_size_bytes": 8622904,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "vagrant-vmware-utility_1.0.23_darwin_amd64.dmg",
+      "source_url": "https://releases.hashicorp.com/vagrant-vmware-utility/1.0.23/vagrant-vmware-utility_1.0.23_darwin_amd64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:37:27.692183Z",
+      "sha3_hash": "2c1f1abbea17943ab19c2d56510fdbdf7d6891702e2b4682538625d2752dd4b8",
+      "file_size_bytes": 16711174,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "vagrant-vmware-utility_1.0.23_windows_amd64.msi",
+      "source_url": "https://releases.hashicorp.com/vagrant-vmware-utility/1.0.23/vagrant-vmware-utility_1.0.23_windows_amd64.msi",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:37:29.571927Z",
+      "sha3_hash": "e017ef12c384e86620efb154a12457cf63193da4a566177f51ad12d09df1b70c",
+      "file_size_bytes": 9674752,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "vagrant_2.4.3_darwin_amd64.dmg",
+      "source_url": "https://releases.hashicorp.com/vagrant/2.4.3/vagrant_2.4.3_darwin_amd64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:35:12.857482Z",
+      "sha3_hash": "d5ef9438a17a35228bf8a2b2ee332b0786f7136c5cbb9bd801f15a19fb4360a6",
+      "file_size_bytes": 136475577,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "vagrant_2.4.3_windows_amd64.msi",
+      "source_url": "https://releases.hashicorp.com/vagrant/2.4.3/vagrant_2.4.3_windows_amd64.msi",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:35:22.160407Z",
+      "sha3_hash": "d76f85db4eda013c4be38e9cd8fcf9ac343e068d86acfc91b1dfe40d9d7cd2f5",
+      "file_size_bytes": 263413760,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "vagrant_2.4.3_windows_i686.msi",
+      "source_url": "https://releases.hashicorp.com/vagrant/2.4.3/vagrant_2.4.3_windows_i686.msi",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T17:35:22.887785Z",
+      "sha3_hash": "361bcd780c2fbe9bb8853f977dfb442f8f98630978854f0f7603d333535b8800",
+      "file_size_bytes": 275378176,
+      "platform": "windows",
+      "file_type": "msi"
+    }
+  ]
+}

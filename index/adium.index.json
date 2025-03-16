@@ -1,0 +1,70 @@
+{
+  "last_updated": "2025-03-16T18:03:06.842315Z",
+  "stats": {
+    "FilesStored": 6,
+    "UniqueHashes": 6,
+    "LastUpdatedAt": "2025-03-16T18:03:06.842315Z"
+  },
+  "installers": [
+    {
+      "filename": "AdiumX_0.89.1.dmg",
+      "source_url": "https://adiumx.cachefly.net/AdiumX_0.89.1.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-16T18:03:06.750999Z",
+      "sha3_hash": "d900897c1ccaff4b583fed7c2f86f0ca1184f23954e9e69cb08006453bc6bf5c",
+      "file_size_bytes": 11721234,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.0.6.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.0.6.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-16T18:03:06.776002Z",
+      "sha3_hash": "076addc44627438e6ccddf1b046b901dae452c7fd82f9b0d886597ff01aef36d",
+      "file_size_bytes": 13795246,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.3.10.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.3.10.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-16T18:03:06.114195Z",
+      "sha3_hash": "5ab8ebd44c514c142d5667f265c6ecd5de0010096dbab60a64dabd4f15e99e76",
+      "file_size_bytes": 22369877,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.4.5.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.4.5.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-16T18:03:06.214542Z",
+      "sha3_hash": "77f54d70bde81d1bdcd06fd8f020225fd48e9a9d639f0f6a2f0de6a09aea9fb9",
+      "file_size_bytes": 23065688,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.5.10.4.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.5.10.4.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-16T18:03:05.735011Z",
+      "sha3_hash": "55b850d88908ec4c2b3157bfaeb0c23b6e1f427431d631aec08fbd62ed9494ac",
+      "file_size_bytes": 21140435,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "Adium_1.5.10.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.5.10.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-16T18:03:06.174771Z",
+      "sha3_hash": "889d4d45acdddd7c3e53659916dc56fc4bf2b2760acc1a12419513a30ef97cb1",
+      "file_size_bytes": 24595712,
+      "platform": "macos",
+      "file_type": "dmg"
+    }
+  ]
+}

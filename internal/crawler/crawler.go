@@ -16,6 +16,8 @@ type Stats struct {
 	URLsVisited int
 	URLsSkipped int
 	URLsQueued  int
+	StartTime   time.Time
+	EndTime     time.Time
 }
 
 // Crawler handles the website crawling and URL discovery
@@ -84,6 +86,11 @@ func New(workers int, startURL string, maxDepth int, includePatterns, excludePat
 
 // Run starts the crawler
 func (c *Crawler) Run() error {
+
+	c.statsMutex.Lock()
+	c.stats.StartTime = time.Now()
+	c.statsMutex.Unlock()
+
 	// Initialize collector
 	c.collector = colly.NewCollector(
 		colly.MaxDepth(c.maxDepth),
@@ -207,6 +214,11 @@ func (c *Crawler) Run() error {
 
 	// Signal completion
 	close(c.done)
+
+	c.statsMutex.Lock()
+	c.stats.EndTime = time.Now()
+	c.statsMutex.Unlock()
+
 	return nil
 }
 
@@ -314,4 +326,19 @@ func (c *Crawler) incrementQueued() {
 	c.statsMutex.Lock()
 	c.stats.URLsQueued++
 	c.statsMutex.Unlock()
+}
+
+func (c *Crawler) Duration() time.Duration {
+	c.statsMutex.RLock()
+	defer c.statsMutex.RUnlock()
+
+	if c.stats.StartTime.IsZero() {
+		return 0
+	}
+
+	if c.stats.EndTime.IsZero() {
+		return time.Since(c.stats.StartTime)
+	}
+
+	return c.stats.EndTime.Sub(c.stats.StartTime)
 }

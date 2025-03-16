@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"sync"
+	"time"
 
 	"github.com/deploymenttheory/go-app-index/internal/downloader"
 	"github.com/deploymenttheory/go-app-index/internal/storage"
@@ -14,6 +15,8 @@ import (
 type Stats struct {
 	FilesProcessed int
 	Errors         int
+	StartTime      time.Time
+	EndTime        time.Time
 }
 
 // Processor handles file processing and metadata extraction
@@ -45,6 +48,11 @@ func New(workers int, storage storage.Storage, tempDir string) *Processor {
 
 // Start begins the processing workers
 func (p *Processor) Start() {
+
+	p.statsMutex.Lock()
+	p.stats.StartTime = time.Now()
+	p.statsMutex.Unlock()
+
 	for i := 0; i < p.workers; i++ {
 		p.wg.Add(1)
 		go p.worker(i)
@@ -136,6 +144,10 @@ func (p *Processor) Stop() {
 // Wait waits for all processing to complete
 func (p *Processor) Wait() {
 	p.wg.Wait()
+
+	p.statsMutex.Lock()
+	p.stats.EndTime = time.Now()
+	p.statsMutex.Unlock()
 }
 
 // Stats returns the current processing statistics
@@ -157,4 +169,19 @@ func (p *Processor) incrementErrors() {
 	p.statsMutex.Lock()
 	p.stats.Errors++
 	p.statsMutex.Unlock()
+}
+
+func (c *Processor) Duration() time.Duration {
+	c.statsMutex.RLock()
+	defer c.statsMutex.RUnlock()
+
+	if c.stats.StartTime.IsZero() {
+		return 0
+	}
+
+	if c.stats.EndTime.IsZero() {
+		return time.Since(c.stats.StartTime)
+	}
+
+	return c.stats.EndTime.Sub(c.stats.StartTime)
 }

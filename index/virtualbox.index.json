@@ -1,0 +1,280 @@
+{
+  "last_updated": "2025-03-16T17:32:48.96446Z",
+  "stats": {
+    "FilesStored": 27,
+    "UniqueHashes": 27,
+    "LastUpdatedAt": "2025-03-16T17:32:48.96446Z"
+  },
+  "installers": [
+    {
+      "filename": "jdk-21_linux-aarch64_bin.rpm",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.rpm",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:32:05.319778Z",
+      "sha3_hash": "575078da80b39731f904cbf3fc55c0e980177169f8c8a8869874f07b66658261",
+      "file_size_bytes": 195268280,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "jdk-21_linux-x64_bin.deb",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:57.578564Z",
+      "sha3_hash": "fe3cde74f25cb60fc9ec8d2abe953acf91fe47c116375e62d1cfbae2f78eb612",
+      "file_size_bytes": 167853860,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "jdk-21_linux-x64_bin.rpm",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.rpm",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:32:13.77464Z",
+      "sha3_hash": "b86115a32f28527c8f198d11c42d72067949620e4bee32c754332af8dede3e25",
+      "file_size_bytes": 197052220,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "jdk-21_macos-aarch64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_macos-aarch64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:32:19.976385Z",
+      "sha3_hash": "17c8be8b422be9b59f976b997ca7b82448c2b4d72dc481aa1c02f82235f1345b",
+      "file_size_bytes": 190128080,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-21_macos-x64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_macos-x64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:32:14.343887Z",
+      "sha3_hash": "62ec7492ca337208f34f43e607a1c8e98001ffdcc6e8f3d2f18eb8de08bb59b5",
+      "file_size_bytes": 192484227,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-21_windows-x64_bin.exe",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:32:16.83919Z",
+      "sha3_hash": "48f60f27daf64e7a9d65059dcdaeca84ea899e39dc5df291b7568e6dfe14475c",
+      "file_size_bytes": 172293232,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "jdk-21_windows-x64_bin.msi",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.msi",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:32:27.141457Z",
+      "sha3_hash": "e6fbff2c94db9626c3b49f3aad31cc2b4b7a7cc27f9c03a5a21a9c088a8af1ea",
+      "file_size_bytes": 170979328,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "jdk-23_linux-aarch64_bin.rpm",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_linux-aarch64_bin.rpm",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:36.740465Z",
+      "sha3_hash": "9bc7b1b199c51f5c18e03901b32045cf9dde88fae1286901ed0dcbc9ca52e888",
+      "file_size_bytes": 239727865,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "jdk-23_linux-x64_bin.deb",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:39.679591Z",
+      "sha3_hash": "9df5593dabf7baadc553f5196fee99a0a9cda67a51847e9ff920012387141c6f",
+      "file_size_bytes": 209248952,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "jdk-23_linux-x64_bin.rpm",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.rpm",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:41.393037Z",
+      "sha3_hash": "757b0631291627fb565458f51ca237833049aed9f11f36a929009722d9d8d35f",
+      "file_size_bytes": 242289842,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "jdk-23_macos-aarch64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_macos-aarch64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:56.810257Z",
+      "sha3_hash": "24f15af72f4c5cae4070be8f0a09bb48160588979b5b85c1c04a14efb7731bd6",
+      "file_size_bytes": 236725196,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-23_macos-x64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_macos-x64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:41.425058Z",
+      "sha3_hash": "f109ed6c39f1cb548e16eacab7d15c13345660b3b69d59d8a93c2af06b49fb53",
+      "file_size_bytes": 239571995,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-23_windows-x64_bin.exe",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.exe",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:58.070275Z",
+      "sha3_hash": "2a3c269480efdde4005cc92e5a28f1867e668f632c5ec284545246436f862629",
+      "file_size_bytes": 215243888,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "jdk-23_windows-x64_bin.msi",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.msi",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T17:31:59.408406Z",
+      "sha3_hash": "45a088fafdc9c7f6cb51e1b76df75310d5051bce8875da0efb8496a90395ead0",
+      "file_size_bytes": 213929984,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "VirtualBox-7.1-7.1.6_167084_el8-1.x86_64.rpm",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1-7.1.6_167084_el8-1.x86_64.rpm",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:47.655926Z",
+      "sha3_hash": "6e84f018482bd979d1f7908409dc40e9b754e365dd8e89a709cc39fd94208419",
+      "file_size_bytes": 123842112,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "VirtualBox-7.1-7.1.6_167084_el9-1.x86_64.rpm",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1-7.1.6_167084_el9-1.x86_64.rpm",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:46.215189Z",
+      "sha3_hash": "fbf188251e4b3a3472b97be6dda6f89afc7862720fd556c243290759320b20db",
+      "file_size_bytes": 121835167,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "VirtualBox-7.1-7.1.6_167084_fedora36-1.x86_64.rpm",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1-7.1.6_167084_fedora36-1.x86_64.rpm",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:44.157574Z",
+      "sha3_hash": "de878462db471d4c61c2fdc7eb6e2d6272ca8611cf4025652d8f9b4335491e35",
+      "file_size_bytes": 121903750,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "VirtualBox-7.1-7.1.6_167084_fedora40-1.x86_64.rpm",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1-7.1.6_167084_fedora40-1.x86_64.rpm",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:40.111145Z",
+      "sha3_hash": "a3e108c0be8e9b558ac0ba82e41472fa75b27d728eddd6f016adbf5bfedd9ebc",
+      "file_size_bytes": 121897241,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "VirtualBox-7.1-7.1.6_167084_openSUSE153-1.x86_64.rpm",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1-7.1.6_167084_openSUSE153-1.x86_64.rpm",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:38.023484Z",
+      "sha3_hash": "4623b10186a6effa0d1f7f6b1a28bdb01ece8d78d235880c3058fefcd10ff33e",
+      "file_size_bytes": 115590184,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "VirtualBox-7.1.6-167084-OSX.dmg",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-167084-OSX.dmg",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:31:05.531673Z",
+      "sha3_hash": "42e78b8d110190a1be34a48bd538f57677c5ebd3849904ea43f03a6444e7b4b9",
+      "file_size_bytes": 156399253,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "VirtualBox-7.1.6-167084-Win.exe",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-167084-Win.exe",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:31:04.978741Z",
+      "sha3_hash": "6b19a553011dd8342e452e8d95379c56bdff7b6a1dd8b0e1e18049e170da9ddf",
+      "file_size_bytes": 123016232,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "VirtualBox-7.1.6-167084-macOSArm64.dmg",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-167084-macOSArm64.dmg",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:31:03.378854Z",
+      "sha3_hash": "c088cb101d3d8f2c4083f7a1d8c02dd8e76774881d5973ca7ee635a9d8bb11bc",
+      "file_size_bytes": 144184645,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "virtualbox-7.1_7.1.6-167084~Debian~bookworm_amd64.deb",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/virtualbox-7.1_7.1.6-167084~Debian~bookworm_amd64.deb",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:31.490059Z",
+      "sha3_hash": "f264990b273c975edaa9849ee5c73bf47b4a09e65824add2d4d84e3ff82ecaa6",
+      "file_size_bytes": 116393676,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "virtualbox-7.1_7.1.6-167084~Debian~bullseye_amd64.deb",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/virtualbox-7.1_7.1.6-167084~Debian~bullseye_amd64.deb",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:35.28011Z",
+      "sha3_hash": "c43e5715eea512cc817d0c33be096da6c4281096d278fec1e50e4a1498e4b8ca",
+      "file_size_bytes": 116229368,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "virtualbox-7.1_7.1.6-167084~Ubuntu~focal_amd64.deb",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/virtualbox-7.1_7.1.6-167084~Ubuntu~focal_amd64.deb",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:29.387776Z",
+      "sha3_hash": "acc72991115568038cfd458068ec6d7e8f2984357db592a4bb28a72878576b30",
+      "file_size_bytes": 116925708,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "virtualbox-7.1_7.1.6-167084~Ubuntu~jammy_amd64.deb",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/virtualbox-7.1_7.1.6-167084~Ubuntu~jammy_amd64.deb",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:46.889902Z",
+      "sha3_hash": "f0b3bd6241cc31ac13a368724e76ebb19924b100cf6943a96bda0afa00edad5d",
+      "file_size_bytes": 116761540,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "virtualbox-7.1_7.1.6-167084~Ubuntu~noble_amd64.deb",
+      "source_url": "https://download.virtualbox.org/virtualbox/7.1.6/virtualbox-7.1_7.1.6-167084~Ubuntu~noble_amd64.deb",
+      "website_domain": "download.virtualbox.org",
+      "discovered_at": "2025-03-16T17:32:48.682211Z",
+      "sha3_hash": "3b444de10bc2dad9b8853b65857d8c6e4c1bbedc85de1155b1e2d2a129bd9e6a",
+      "file_size_bytes": 106794256,
+      "platform": "linux",
+      "file_type": "deb"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "last_updated": "2025-03-16T17:48:49.845318Z",
+  "stats": {
+    "FilesStored": 4,
+    "UniqueHashes": 4,
+    "LastUpdatedAt": "2025-03-16T17:48:49.845318Z"
+  },
+  "installers": [
+    {
+      "filename": "1PasswordSetup-latest.BETA.exe",
+      "source_url": "https://downloads.1password.com/win/1PasswordSetup-latest.BETA.exe",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-16T17:47:53.959156Z",
+      "sha3_hash": "c7757a5c6c1fdaa263486e49e37b21667fbdf12e920d8c905b3e13937065b8e9",
+      "file_size_bytes": 178164576,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "1PasswordSetup-latest.exe",
+      "source_url": "https://downloads.1password.com/win/1PasswordSetup-latest.exe",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-16T17:47:53.46742Z",
+      "sha3_hash": "0864bcdb21a4c1aeb1e2f677761bf8a2a9805f9bd48d4240a9381a2578c757b7",
+      "file_size_bytes": 177581408,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "1password-latest.deb",
+      "source_url": "https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-16T17:48:49.466781Z",
+      "sha3_hash": "f145d19339543d5ab18e9305011988d158e5cfc88b9212f4819fc57fbc456dae",
+      "file_size_bytes": 142025838,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "1password-latest.rpm",
+      "source_url": "https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm",
+      "website_domain": "downloads.1password.com",
+      "discovered_at": "2025-03-16T17:48:48.589203Z",
+      "sha3_hash": "49345488f449c7be32e4efa038cc66ecb51b8be915480e78f39e5f1f86b17ed2",
+      "file_size_bytes": 135256616,
+      "platform": "linux",
+      "file_type": "rpm"
+    }
+  ]
+}

@@ -17,6 +17,8 @@ type Stats struct {
 	FilesDownloaded int
 	BytesDownloaded int64
 	Errors          int
+	StartTime       time.Time
+	EndTime         time.Time
 }
 
 // Downloader handles the detection and downloading of installer files
@@ -70,6 +72,11 @@ func New(workers int, processorQueue chan<- DownloadResult, fileExtensions []str
 
 // Start begins the download workers
 func (d *Downloader) Start() {
+
+	d.statsMutex.Lock()
+	d.stats.StartTime = time.Now()
+	d.statsMutex.Unlock()
+
 	// Ensure temp directory exists
 	if err := os.MkdirAll(d.tempDir, 0755); err != nil {
 		fmt.Printf("Failed to create temp directory: %v\n", err)
@@ -209,6 +216,10 @@ func (d *Downloader) Stop() {
 // Wait waits for all downloads to complete
 func (d *Downloader) Wait() {
 	d.wg.Wait()
+
+	d.statsMutex.Lock()
+	d.stats.EndTime = time.Now()
+	d.statsMutex.Unlock()
 }
 
 // Stats returns the current download statistics
@@ -284,4 +295,19 @@ func (d *Downloader) incrementErrors() {
 	d.statsMutex.Lock()
 	d.stats.Errors++
 	d.statsMutex.Unlock()
+}
+
+func (c *Downloader) Duration() time.Duration {
+	c.statsMutex.RLock()
+	defer c.statsMutex.RUnlock()
+
+	if c.stats.StartTime.IsZero() {
+		return 0
+	}
+
+	if c.stats.EndTime.IsZero() {
+		return time.Since(c.stats.StartTime)
+	}
+
+	return c.stats.EndTime.Sub(c.stats.StartTime)
 }

@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/spf13/cobra"
 
@@ -110,6 +111,8 @@ func runScraper(cmd *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 
+	overallStartTime := time.Now()
+
 	logger.Infof("Starting scraper for %s with depth %d", cfg.StartURL, cfg.MaxDepth)
 	logger.Infof("Looking for file extensions: %v", cfg.FileExtensions)
 
@@ -149,15 +152,25 @@ func runScraper(cmd *cobra.Command, args []string) {
 		down.Wait()
 		proc.Done()
 		proc.Wait()
+		store.Close()
 	case sig := <-signalChan:
 		logger.Infof("Received signal %v, shutting down gracefully...", sig)
 		crawl.Stop()
 		down.Stop()
 		proc.Stop()
+		store.Close()
 	}
 
+	overallDuration := time.Since(overallStartTime)
+
 	// Final stats
-	logger.Infof("Scraper completed")
+	logger.Infof("Scraper completed in %v", overallDuration)
+	logger.Infof("Component timing:")
+	logger.Infof("  - Crawler:    %v", crawl.Duration())
+	logger.Infof("  - Downloader: %v", down.Duration())
+	logger.Infof("  - Processor:  %v", proc.Duration())
+
+	logger.Infof("URLs visited: %d", crawl.Stats().URLsVisited)
 	logger.Infof("URLs visited: %d", crawl.Stats().URLsVisited)
 	logger.Infof("URLs skipped: %d", crawl.Stats().URLsSkipped)
 	logger.Infof("Files found: %d", down.Stats().FilesFound)

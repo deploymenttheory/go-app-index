@@ -23,4 +23,6 @@ type StorageStats struct {
 	FilesStored   int
 	UniqueHashes  int
 	LastUpdatedAt time.Time
+	StartTime     time.Time
+	EndTime       time.Time
 }
