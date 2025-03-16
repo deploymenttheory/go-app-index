@@ -173,6 +173,13 @@ func (c *Crawler) Run() error {
 			}
 			logger.Debugf("Response preview: %s", preview)
 		}
+
+		// Check if final URL (after redirects) is an installer
+		finalURL := r.Request.URL.String()
+		if c.isPotentialInstallerURL(finalURL) {
+			logger.Infof("Potential installer detected from response: %s", finalURL)
+			c.sendToDownloader(finalURL)
+		}
 	})
 
 	c.collector.OnError(func(r *colly.Response, err error) {

@@ -1,9 +1,9 @@
 {
-  "last_updated": "2025-03-16T10:06:00.093939Z",
+  "last_updated": "2025-03-16T10:22:29.083848Z",
   "stats": {
-    "FilesStored": 125,
-    "UniqueHashes": 125,
-    "LastUpdatedAt": "2025-03-16T10:06:00.093939Z"
+    "FilesStored": 128,
+    "UniqueHashes": 128,
+    "LastUpdatedAt": "2025-03-16T10:22:29.083848Z"
   },
   "installers": [
     {
@@ -983,6 +983,36 @@
       "discovered_at": "2025-03-15T21:45:13.092479Z",
       "sha3_hash": "87603a54e43f3ff3d21e37130fd4fdc163f06060d39654dbbe24ef16bd4764c1",
       "file_size_bytes": 385380234,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "AirServer-5.7.1-x64.msi",
+      "source_url": "https://dl.airserver.com/pc32/AirServer-5.7.1-x64.msi",
+      "website_domain": "dl.airserver.com",
+      "discovered_at": "2025-03-16T10:22:28.84577Z",
+      "sha3_hash": "3120b476a7c86719c2c95bd0c2ad3c272d271ddc6de95db4c2d2a9493029f3ba",
+      "file_size_bytes": 20738048,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "AirServer-5.7.1-x86.msi",
+      "source_url": "https://dl.airserver.com/pc32/AirServer-5.7.1-x86.msi",
+      "website_domain": "dl.airserver.com",
+      "discovered_at": "2025-03-16T10:22:29.012983Z",
+      "sha3_hash": "035508f19e571c431fabb9932b4f74e599d10510fdfb0b3172549847cac26844",
+      "file_size_bytes": 21426176,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "AirServer-7.2.7.dmg",
+      "source_url": "https://dl.airserver.com/mac/AirServer-7.2.7.dmg",
+      "website_domain": "dl.airserver.com",
+      "discovered_at": "2025-03-16T10:22:26.057036Z",
+      "sha3_hash": "68190289daf9f5de173693dcac410eba6254e57fc2c0837f34ebfe2c4d4bb758",
+      "file_size_bytes": 13096417,
       "platform": "macos",
       "file_type": "dmg"
     },
