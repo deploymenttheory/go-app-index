@@ -16,4 +16,7 @@ type Config struct {
 	DownloadWorkers  int
 	ProcessorWorkers int
 	Delay            int // in milliseconds
+
+	// Timeout settings
+	RequestTimeout int // in seconds
 }

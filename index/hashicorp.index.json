@@ -1,9 +1,9 @@
 {
-  "last_updated": "2025-03-16T17:43:54.492554Z",
+  "last_updated": "2025-03-16T19:46:37.094047Z",
   "stats": {
-    "FilesStored": 21,
-    "UniqueHashes": 21,
-    "LastUpdatedAt": "2025-03-16T17:43:54.492554Z"
+    "FilesStored": 38,
+    "UniqueHashes": 38,
+    "LastUpdatedAt": "2025-03-16T19:46:37.094047Z"
   },
   "installers": [
     {
@@ -27,6 +27,16 @@
       "file_type": "pkg"
     },
     {
+      "filename": "grafana-enterprise-11.5.2-1.x86_64.rpm",
+      "source_url": "https://dl.grafana.com/enterprise/release/grafana-enterprise-11.5.2-1.x86_64.rpm",
+      "website_domain": "dl.grafana.com",
+      "discovered_at": "2025-03-16T18:52:19.415597Z",
+      "sha3_hash": "1be8e83916f9a7f9cf80ed9a8d4e8eec369ed497089cababfd1d0c2ca555145f",
+      "file_size_bytes": 145351666,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
       "filename": "mc.exe",
       "source_url": "https://dl.min.io/client/mc/release/windows-amd64/mc.exe",
       "website_domain": "dl.min.io",
@@ -35,6 +45,126 @@
       "file_size_bytes": 31003136,
       "platform": "windows",
       "file_type": "exe"
+    },
+    {
+      "filename": "jdk-21_linux-aarch64_bin.rpm",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.rpm",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:43:20.045316Z",
+      "sha3_hash": "575078da80b39731f904cbf3fc55c0e980177169f8c8a8869874f07b66658261",
+      "file_size_bytes": 195268280,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "jdk-21_linux-x64_bin.deb",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:44:00.831987Z",
+      "sha3_hash": "fe3cde74f25cb60fc9ec8d2abe953acf91fe47c116375e62d1cfbae2f78eb612",
+      "file_size_bytes": 167853860,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "jdk-21_linux-x64_bin.rpm",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.rpm",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:44:51.765171Z",
+      "sha3_hash": "b86115a32f28527c8f198d11c42d72067949620e4bee32c754332af8dede3e25",
+      "file_size_bytes": 197052220,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "jdk-21_macos-aarch64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_macos-aarch64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:44:55.992838Z",
+      "sha3_hash": "17c8be8b422be9b59f976b997ca7b82448c2b4d72dc481aa1c02f82235f1345b",
+      "file_size_bytes": 190128080,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-21_macos-x64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_macos-x64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:45:44.558196Z",
+      "sha3_hash": "62ec7492ca337208f34f43e607a1c8e98001ffdcc6e8f3d2f18eb8de08bb59b5",
+      "file_size_bytes": 192484227,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-21_windows-x64_bin.exe",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:45:45.564739Z",
+      "sha3_hash": "48f60f27daf64e7a9d65059dcdaeca84ea899e39dc5df291b7568e6dfe14475c",
+      "file_size_bytes": 172293232,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "jdk-21_windows-x64_bin.msi",
+      "source_url": "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.msi",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:45:59.395572Z",
+      "sha3_hash": "e6fbff2c94db9626c3b49f3aad31cc2b4b7a7cc27f9c03a5a21a9c088a8af1ea",
+      "file_size_bytes": 170979328,
+      "platform": "windows",
+      "file_type": "msi"
+    },
+    {
+      "filename": "jdk-23_linux-x64_bin.rpm",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.rpm",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:45:19.646091Z",
+      "sha3_hash": "757b0631291627fb565458f51ca237833049aed9f11f36a929009722d9d8d35f",
+      "file_size_bytes": 242289842,
+      "platform": "linux",
+      "file_type": "rpm"
+    },
+    {
+      "filename": "jdk-23_macos-aarch64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_macos-aarch64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:45:37.092461Z",
+      "sha3_hash": "24f15af72f4c5cae4070be8f0a09bb48160588979b5b85c1c04a14efb7731bd6",
+      "file_size_bytes": 236725196,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-23_macos-x64_bin.dmg",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_macos-x64_bin.dmg",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:45:54.296846Z",
+      "sha3_hash": "f109ed6c39f1cb548e16eacab7d15c13345660b3b69d59d8a93c2af06b49fb53",
+      "file_size_bytes": 239571995,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "jdk-23_windows-x64_bin.exe",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.exe",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:43:36.588904Z",
+      "sha3_hash": "2a3c269480efdde4005cc92e5a28f1867e668f632c5ec284545246436f862629",
+      "file_size_bytes": 215243888,
+      "platform": "windows",
+      "file_type": "exe"
+    },
+    {
+      "filename": "jdk-23_windows-x64_bin.msi",
+      "source_url": "https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.msi",
+      "website_domain": "download.oracle.com",
+      "discovered_at": "2025-03-16T18:42:43.27868Z",
+      "sha3_hash": "45a088fafdc9c7f6cb51e1b76df75310d5051bce8875da0efb8496a90395ead0",
+      "file_size_bytes": 213929984,
+      "platform": "windows",
+      "file_type": "msi"
     },
     {
       "filename": "GitHubCopilotForXcode.dmg",
@@ -77,6 +207,16 @@
       "file_type": "dmg"
     },
     {
+      "filename": "boundary-desktop_1.5.1_amd64.deb",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/1.5.1/boundary-desktop_1.5.1_amd64.deb",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T19:40:42.205179Z",
+      "sha3_hash": "d348625cb17a62e20c65531f3ce37154f9f1c5a6f351761441d0948bea6d4ad0",
+      "file_size_bytes": 174797956,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
       "filename": "boundary-desktop_1.7.0_amd64.deb",
       "source_url": "https://releases.hashicorp.com/boundary-desktop/1.7.0/boundary-desktop_1.7.0_amd64.deb",
       "website_domain": "releases.hashicorp.com",
@@ -93,6 +233,26 @@
       "discovered_at": "2025-03-16T17:43:16.618473Z",
       "sha3_hash": "66f21dcc8eef9ae9b404a3a629dea2aa17350d13d76e9fd4737449adbcafe035",
       "file_size_bytes": 229589307,
+      "platform": "macos",
+      "file_type": "dmg"
+    },
+    {
+      "filename": "boundary-desktop_1.7.1_amd64.deb",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/1.7.1/boundary-desktop_1.7.1_amd64.deb",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T19:40:47.640688Z",
+      "sha3_hash": "1c16948c021f3957bb504abd4e23591f0a61b0cec3981a638ea3668ecf3e8273",
+      "file_size_bytes": 195311764,
+      "platform": "linux",
+      "file_type": "deb"
+    },
+    {
+      "filename": "boundary-desktop_1.7.1_darwin_amd64.dmg",
+      "source_url": "https://releases.hashicorp.com/boundary-desktop/1.7.1/boundary-desktop_1.7.1_darwin_amd64.dmg",
+      "website_domain": "releases.hashicorp.com",
+      "discovered_at": "2025-03-16T19:41:00.308552Z",
+      "sha3_hash": "1d4a6afa35efeca987ed37e710ff5c8c5e9a3c59c1365e0173b09e8b066d0afb",
+      "file_size_bytes": 229718904,
       "platform": "macos",
       "file_type": "dmg"
     },
@@ -215,6 +375,16 @@
       "file_size_bytes": 275378176,
       "platform": "windows",
       "file_type": "msi"
+    },
+    {
+      "filename": "minikube-installer.exe",
+      "source_url": "https://storage.googleapis.com/minikube/releases/latest/minikube-installer.exe",
+      "website_domain": "storage.googleapis.com",
+      "discovered_at": "2025-03-16T18:52:36.53291Z",
+      "sha3_hash": "da4011726dd64dfed3679a6a21b5c91a36468a208f3c1623d15b2814e27799e1",
+      "file_size_bytes": 48144629,
+      "platform": "windows",
+      "file_type": "exe"
     }
   ]
 }

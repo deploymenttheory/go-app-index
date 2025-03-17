@@ -20,9 +20,16 @@ type Storage interface {
 
 // StorageStats holds storage statistics
 type StorageStats struct {
-	FilesStored   int
-	UniqueHashes  int
-	LastUpdatedAt time.Time
-	StartTime     time.Time
-	EndTime       time.Time
+	FilesStored   int       `json:"files_stored"`
+	UniqueHashes  int       `json:"unique_hashes"`
+	LastUpdatedAt time.Time `json:"last_updated_at"`
+	StartTime     time.Time `json:"start_time,omitempty"`
+	EndTime       time.Time `json:"end_time,omitempty"`
+
+	// Enhanced stats
+	FilesByPlatform      map[string]int `json:"files_by_platform,omitempty"`
+	FilesByType          map[string]int `json:"files_by_type,omitempty"`
+	AvgDetectionScore    float64        `json:"avg_detection_score,omitempty"`
+	SignedInstallerCount int            `json:"signed_installer_count,omitempty"`
+	VersionedFileCount   int            `json:"versioned_file_count,omitempty"`
 }

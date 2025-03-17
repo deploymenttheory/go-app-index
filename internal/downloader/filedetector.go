@@ -4,6 +4,9 @@ import (
 	"mime"
 	"path/filepath"
 	"strings"
+
+	"github.com/deploymenttheory/go-app-index/internal/fileanalyzer"
+	"github.com/deploymenttheory/go-app-index/internal/logger"
 )
 
 // FileType represents a type of installer file
@@ -33,7 +36,24 @@ var knownFileTypes = []FileType{
 }
 
 // DetectFileType detects the type of installer file based on name and content type
-func DetectFileType(fileName, contentType string) (fileType, platform string) {
+// If filePath is provided, enhanced analysis will be performed
+func DetectFileType(fileName, contentType string, filePath string) (fileType, platform string, confidence float64) {
+	// Try enhanced detection if file path is provided
+	if filePath != "" {
+		// Initialize analyzer manager
+		analyzer := fileanalyzer.NewManager()
+
+		// Perform analysis
+		result, err := analyzer.Analyze(filePath, contentType)
+		if err == nil && result.Confidence > 0.5 {
+			logger.Debugf("Enhanced file detection result: %s, %s, confidence: %.2f",
+				result.FileType, result.Platform, result.Confidence)
+
+			return result.FileType, result.Platform, result.Confidence
+		}
+	}
+
+	// Fall back to basic detection
 	ext := strings.ToLower(filepath.Ext(fileName))
 	lowerContentType := strings.ToLower(contentType)
 
@@ -41,7 +61,7 @@ func DetectFileType(fileName, contentType string) (fileType, platform string) {
 	for _, ft := range knownFileTypes {
 		for _, e := range ft.Extensions {
 			if e == ext {
-				return strings.TrimPrefix(ext, "."), ft.Platform
+				return strings.TrimPrefix(ext, "."), ft.Platform, 0.7
 			}
 		}
 	}
@@ -52,9 +72,9 @@ func DetectFileType(fileName, contentType string) (fileType, platform string) {
 			if strings.Contains(lowerContentType, mt) {
 				// Use extension if available, otherwise use generic name
 				if ext != "" {
-					return strings.TrimPrefix(ext, "."), ft.Platform
+					return strings.TrimPrefix(ext, "."), ft.Platform, 0.6
 				}
-				return "installer", ft.Platform
+				return "installer", ft.Platform, 0.5
 			}
 		}
 	}
@@ -62,17 +82,17 @@ func DetectFileType(fileName, contentType string) (fileType, platform string) {
 	// If all else fails, try to determine from extension
 	switch ext {
 	case ".exe", ".msi":
-		return strings.TrimPrefix(ext, "."), "windows"
+		return strings.TrimPrefix(ext, "."), "windows", 0.6
 	case ".dmg", ".pkg":
-		return strings.TrimPrefix(ext, "."), "macos"
+		return strings.TrimPrefix(ext, "."), "macos", 0.6
 	case ".deb", ".rpm", ".appimage":
-		return strings.TrimPrefix(ext, "."), "linux"
+		return strings.TrimPrefix(ext, "."), "linux", 0.6
 	default:
 		// Try to guess from content type
 		mimeExt, _ := mime.ExtensionsByType(contentType)
 		if len(mimeExt) > 0 {
-			return strings.TrimPrefix(mimeExt[0], "."), "unknown"
+			return strings.TrimPrefix(mimeExt[0], "."), "unknown", 0.4
 		}
-		return "unknown", "unknown"
+		return "unknown", "unknown", 0.3
 	}
 }

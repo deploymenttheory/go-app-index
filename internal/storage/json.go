@@ -9,6 +9,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/deploymenttheory/go-app-index/internal/logger"
 	"github.com/deploymenttheory/go-app-index/internal/types"
 )
 
@@ -37,7 +38,9 @@ func New(filePath string) (*JSONStorage, error) {
 		data: JSONOutput{
 			LastUpdated: time.Now(),
 			Stats: types.StorageStats{
-				LastUpdatedAt: time.Now(),
+				LastUpdatedAt:   time.Now(),
+				FilesByPlatform: make(map[string]int),
+				FilesByType:     make(map[string]int),
 			},
 			Installers: make([]types.ProcessedFile, 0),
 		},
@@ -69,14 +72,51 @@ func (s *JSONStorage) Store(file types.ProcessedFile) error {
 	s.hashIndex[file.SHA3Hash] = true
 	s.urlIndex[file.SourceURL] = true
 
-	// Update stats
+	// Update basic stats
 	s.data.Stats.FilesStored++
 	s.data.Stats.UniqueHashes = len(s.hashIndex)
 	s.data.LastUpdated = time.Now()
 	s.data.Stats.LastUpdatedAt = time.Now()
 
+	// Update enhanced stats
+	s.updateEnhancedStats(file)
+
 	// Write to file
 	return s.saveToFile()
+}
+
+// updateEnhancedStats updates statistics related to enhanced metadata
+func (s *JSONStorage) updateEnhancedStats(file types.ProcessedFile) {
+	// Update platform stats
+	if file.Platform != "" {
+		if s.data.Stats.FilesByPlatform == nil {
+			s.data.Stats.FilesByPlatform = make(map[string]int)
+		}
+		s.data.Stats.FilesByPlatform[file.Platform]++
+	}
+
+	// Update file type stats
+	if file.FileType != "" {
+		if s.data.Stats.FilesByType == nil {
+			s.data.Stats.FilesByType = make(map[string]int)
+		}
+		s.data.Stats.FilesByType[file.FileType]++
+	}
+
+	// Update signed installer count
+	if file.IsSigned {
+		s.data.Stats.SignedInstallerCount++
+	}
+
+	// Update versioned file count
+	if file.Version != "" {
+		s.data.Stats.VersionedFileCount++
+	}
+
+	// Update average detection score
+	totalScore := s.data.Stats.AvgDetectionScore * float64(s.data.Stats.FilesStored-1)
+	totalScore += file.DetectionScore
+	s.data.Stats.AvgDetectionScore = totalScore / float64(s.data.Stats.FilesStored)
 }
 
 // Close finalizes the storage
@@ -90,6 +130,15 @@ func (s *JSONStorage) Close() error {
 	// Update the last updated timestamp
 	s.data.LastUpdated = time.Now()
 	s.data.Stats.LastUpdatedAt = time.Now()
+	s.data.Stats.EndTime = time.Now()
+
+	// Log summary of data
+	logger.Infof("Closing storage with %d files stored", s.data.Stats.FilesStored)
+	logger.Infof("Files by platform: %v", s.data.Stats.FilesByPlatform)
+	logger.Infof("Files by type: %v", s.data.Stats.FilesByType)
+	logger.Infof("Signed installer count: %d", s.data.Stats.SignedInstallerCount)
+	logger.Infof("Versioned file count: %d", s.data.Stats.VersionedFileCount)
+	logger.Infof("Average detection score: %.2f", s.data.Stats.AvgDetectionScore)
 
 	// Write to file
 	return s.saveToFile()
@@ -101,8 +150,6 @@ func (s *JSONStorage) Stats() types.StorageStats {
 	defer s.mutex.RUnlock()
 	return s.data.Stats
 }
-
-// Rest of the code remains the same, just update ProcessedFile to types.ProcessedFile
 
 // loadExistingData loads existing data from the JSON file
 func (s *JSONStorage) loadExistingData() error {
@@ -122,15 +169,53 @@ func (s *JSONStorage) loadExistingData() error {
 		return err
 	}
 
+	// Initialize maps if not present (for backward compatibility)
+	if output.Stats.FilesByPlatform == nil {
+		output.Stats.FilesByPlatform = make(map[string]int)
+	}
+	if output.Stats.FilesByType == nil {
+		output.Stats.FilesByType = make(map[string]int)
+	}
+
 	// Add existing installers to our indexes
 	for _, installer := range output.Installers {
 		s.hashIndex[installer.SHA3Hash] = true
 		s.urlIndex[installer.SourceURL] = true
+
+		// Rebuild platform and type stats
+		if installer.Platform != "" {
+			output.Stats.FilesByPlatform[installer.Platform]++
+		}
+		if installer.FileType != "" {
+			output.Stats.FilesByType[installer.FileType]++
+		}
+		if installer.IsSigned {
+			output.Stats.SignedInstallerCount++
+		}
+		if installer.Version != "" {
+			output.Stats.VersionedFileCount++
+		}
+	}
+
+	// Calculate average detection score if we have files and the score isn't already set
+	if output.Stats.FilesStored > 0 && output.Stats.AvgDetectionScore == 0 {
+		var totalScore float64
+		var countWithScore int
+		for _, installer := range output.Installers {
+			if installer.DetectionScore > 0 {
+				totalScore += installer.DetectionScore
+				countWithScore++
+			}
+		}
+		if countWithScore > 0 {
+			output.Stats.AvgDetectionScore = totalScore / float64(countWithScore)
+		}
 	}
 
 	s.data = output
 	s.data.Stats.LastUpdatedAt = time.Now()
 
+	logger.Infof("Loaded %d existing installers from %s", len(output.Installers), s.filePath)
 	return nil
 }
 

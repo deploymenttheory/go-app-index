@@ -29,6 +29,7 @@ type Crawler struct {
 	excludePatterns []*regexp.Regexp
 	delay           int
 	downloadQueue   chan<- string
+	requestTimeout  int
 
 	collector    *colly.Collector
 	visited      map[string]bool
@@ -42,16 +43,17 @@ type Crawler struct {
 }
 
 // New creates a new Crawler
-func New(workers int, startURL string, maxDepth int, includePatterns, excludePatterns []string, delay int, downloadQueue chan<- string) *Crawler {
+func New(workers int, startURL string, maxDepth int, includePatterns, excludePatterns []string, delay int, requestTimeout int, downloadQueue chan<- string) *Crawler {
 	c := &Crawler{
-		workers:       workers,
-		startURL:      startURL,
-		maxDepth:      maxDepth,
-		delay:         delay,
-		downloadQueue: downloadQueue,
-		visited:       make(map[string]bool),
-		done:          make(chan struct{}),
-		stopped:       false,
+		workers:        workers,
+		startURL:       startURL,
+		maxDepth:       maxDepth,
+		delay:          delay,
+		downloadQueue:  downloadQueue,
+		visited:        make(map[string]bool),
+		done:           make(chan struct{}),
+		stopped:        false,
+		requestTimeout: requestTimeout,
 	}
 
 	// Compile regex patterns
@@ -96,6 +98,8 @@ func (c *Crawler) Run() error {
 		colly.MaxDepth(c.maxDepth),
 		colly.Async(true),
 	)
+
+	c.collector.SetRequestTimeout(time.Duration(c.requestTimeout) * time.Second)
 
 	// Limit parallelism
 	err := c.collector.Limit(&colly.LimitRule{

@@ -54,6 +54,7 @@ from specified websites, computes their SHA3 hash, and stores metadata to a JSON
 	rootCmd.Flags().StringSliceP("include", "i", []string{}, "regex patterns to include URLs")
 	rootCmd.Flags().StringSliceP("exclude", "x", []string{}, "regex patterns to exclude URLs")
 	rootCmd.Flags().String("temp-dir", os.TempDir(), "temporary directory for downloads")
+	rootCmd.Flags().IntP("timeout", "t", 300, "HTTP request timeout in seconds")
 
 	// Concurrency flags (same as before)
 	rootCmd.Flags().IntP("crawler-workers", "w", 10, "number of crawler workers")
@@ -130,7 +131,7 @@ func runScraper(cmd *cobra.Command, args []string) {
 	proc := processor.New(cfg.ProcessorWorkers, store, cfg.TempDir)
 	down := downloader.New(cfg.DownloadWorkers, proc.Queue(), cfg.FileExtensions, cfg.TempDir)
 	crawl := crawler.New(cfg.CrawlerWorkers, cfg.StartURL, cfg.MaxDepth,
-		cfg.IncludePatterns, cfg.ExcludePatterns, cfg.Delay, down.Queue())
+		cfg.IncludePatterns, cfg.ExcludePatterns, cfg.Delay, cfg.RequestTimeout, down.Queue())
 
 	// Start components
 	proc.Start()
@@ -197,6 +198,7 @@ func parseConfig(cmd *cobra.Command) (config.Config, error) {
 	downloadWorkers, _ := cmd.Flags().GetInt("download-workers")
 	processorWorkers, _ := cmd.Flags().GetInt("processor-workers")
 	delay, _ := cmd.Flags().GetInt("delay")
+	timeout, _ := cmd.Flags().GetInt("timeout")
 
 	return config.Config{
 		StartURL:         url,
@@ -210,5 +212,6 @@ func parseConfig(cmd *cobra.Command) (config.Config, error) {
 		DownloadWorkers:  downloadWorkers,
 		ProcessorWorkers: processorWorkers,
 		Delay:            delay,
+		RequestTimeout:   timeout,
 	}, nil
 }

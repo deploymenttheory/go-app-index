@@ -7,6 +7,8 @@ import (
 	"time"
 
 	"github.com/deploymenttheory/go-app-index/internal/downloader"
+	"github.com/deploymenttheory/go-app-index/internal/fileanalyzer"
+	"github.com/deploymenttheory/go-app-index/internal/logger"
 	"github.com/deploymenttheory/go-app-index/internal/storage"
 	"github.com/deploymenttheory/go-app-index/internal/types"
 )
@@ -48,7 +50,6 @@ func New(workers int, storage storage.Storage, tempDir string) *Processor {
 
 // Start begins the processing workers
 func (p *Processor) Start() {
-
 	p.statsMutex.Lock()
 	p.stats.StartTime = time.Now()
 	p.statsMutex.Unlock()
@@ -75,13 +76,13 @@ func (p *Processor) worker(id int) {
 			// Process the file
 			processedFile, err := p.processFile(result)
 			if err != nil {
-				fmt.Printf("Worker %d: Failed to process %s: %v\n", id, result.FilePath, err)
+				logger.Errorf("Worker %d: Failed to process %s: %v", id, result.FilePath, err)
 				p.incrementErrors()
 			} else {
 				// Store the processed file info
 				err = p.storage.Store(processedFile)
 				if err != nil {
-					fmt.Printf("Worker %d: Failed to store metadata for %s: %v\n", id, result.FilePath, err)
+					logger.Errorf("Worker %d: Failed to store metadata for %s: %v", id, result.FilePath, err)
 					p.incrementErrors()
 				}
 
@@ -108,19 +109,68 @@ func (p *Processor) processFile(result downloader.DownloadResult) (types.Process
 		return types.ProcessedFile{}, fmt.Errorf("failed to generate hash: %w", err)
 	}
 
-	// Detect file type and platform
-	fileType, platform := downloader.DetectFileType(result.FileName, result.ContentType)
-
-	return types.ProcessedFile{
+	// Create the base processed file
+	processedFile := types.ProcessedFile{
 		Filename:      result.FileName,
 		SourceURL:     result.URL,
 		WebsiteDomain: domain,
 		DiscoveredAt:  result.DownloadedAt,
 		SHA3Hash:      hash,
 		FileSizeBytes: result.FileSize,
-		Platform:      platform,
-		FileType:      fileType,
-	}, nil
+	}
+
+	// Use enhanced file analysis if possible
+	analyzer := fileanalyzer.NewManager()
+	analysisResult, err := analyzer.Analyze(result.FilePath, result.ContentType)
+
+	if err == nil && analysisResult.Confidence > 0.5 {
+		// Use enhanced analysis results
+		logger.Debugf("Using enhanced file analysis for %s: type=%s, platform=%s, confidence=%.2f",
+			result.FileName, analysisResult.FileType, analysisResult.Platform, analysisResult.Confidence)
+
+		processedFile.FileType = analysisResult.FileType
+		processedFile.Platform = analysisResult.Platform
+		processedFile.DetectionScore = analysisResult.Confidence
+		processedFile.IsInstaller = analysisResult.IsInstaller
+
+		// Extract additional metadata if available
+		if analysisResult.Metadata != nil {
+			if version, ok := analysisResult.Metadata["version"].(string); ok {
+				processedFile.Version = version
+			}
+
+			if publisher, ok := analysisResult.Metadata["publisher"].(string); ok {
+				processedFile.Publisher = publisher
+			}
+
+			if isSigned, ok := analysisResult.Metadata["is_signed"].(bool); ok {
+				processedFile.IsSigned = isSigned
+			}
+
+			// Store all metadata
+			processedFile.ExtendedMetadata = analysisResult.Metadata
+		}
+	} else {
+		// Fall back to basic detection
+		logger.Debugf("Falling back to basic file detection for %s", result.FileName)
+		fileType, platform, confidence := downloader.DetectFileType(result.FileName, result.ContentType, "")
+		processedFile.FileType = fileType
+		processedFile.Platform = platform
+		processedFile.DetectionScore = confidence
+
+		// Extract basic metadata
+		basicMetadata := extractMetadata(result.FilePath)
+
+		// Convert map[string]string to map[string]interface{}
+		extendedMetadata := make(map[string]interface{})
+		for k, v := range basicMetadata {
+			extendedMetadata[k] = v
+		}
+
+		processedFile.ExtendedMetadata = extendedMetadata
+	}
+
+	return processedFile, nil
 }
 
 // Queue returns the input queue channel
@@ -171,17 +221,17 @@ func (p *Processor) incrementErrors() {
 	p.statsMutex.Unlock()
 }
 
-func (c *Processor) Duration() time.Duration {
-	c.statsMutex.RLock()
-	defer c.statsMutex.RUnlock()
+func (p *Processor) Duration() time.Duration {
+	p.statsMutex.RLock()
+	defer p.statsMutex.RUnlock()
 
-	if c.stats.StartTime.IsZero() {
+	if p.stats.StartTime.IsZero() {
 		return 0
 	}
 
-	if c.stats.EndTime.IsZero() {
-		return time.Since(c.stats.StartTime)
+	if p.stats.EndTime.IsZero() {
+		return time.Since(p.stats.StartTime)
 	}
 
-	return c.stats.EndTime.Sub(c.stats.StartTime)
+	return p.stats.EndTime.Sub(p.stats.StartTime)
 }
