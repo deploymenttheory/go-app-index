@@ -12,8 +12,8 @@ import (
 	"path/filepath"
 
 	"github.com/blacktop/lzfse-cgo"
-
 	"github.com/deploymenttheory/go-app-index/internal/logger"
+	"howett.net/plist"
 )
 
 const (
@@ -21,8 +21,6 @@ const (
 	dmgHeaderSize = 512
 	sectorSize    = 512
 )
-
-// ref: https://newosxbook.com/DMG.html
 
 type dmgHeader struct {
 	Signature        [4]byte   // Magic ("koly")
@@ -58,6 +56,14 @@ type blkxChunk struct {
 	SectorCount      uint64
 	CompressedOffset uint64
 	CompressedLength uint64
+}
+
+type dmgPlist struct {
+	BLKXTables []blkxTable `plist:"resource-fork"`
+}
+
+type blkxTable struct {
+	Chunks []blkxChunk `plist:"blkx"`
 }
 
 func analyzeDMG(filePath string) (*Result, error) {
@@ -100,6 +106,28 @@ func analyzeDMG(filePath string) (*Result, error) {
 
 	logger.Debugf("Parsed DMG header: %+v", header)
 
+	// Extract the XML Property List (Plist)
+	plistData, err := extractPlist(file, header)
+	if err != nil {
+		logger.Errorf("Failed to extract DMG XML plist: %s", err)
+		return nil, err
+	}
+
+	// Parse blkx table
+	blkxTable, err := parseBlkxTable(plistData)
+	if err != nil {
+		logger.Errorf("Failed to parse blkx table: %s", err)
+		return nil, err
+	}
+
+	// Extract the DMG contents
+	outputPath := filePath + ".extracted"
+	err = extractDMG(file, blkxTable, outputPath)
+	if err != nil {
+		logger.Errorf("Failed to extract DMG contents: %s", err)
+		return nil, err
+	}
+
 	metadata := map[string]interface{}{
 		"file_name":        filepath.Base(filePath),
 		"sha256":           computeFileHash(file),
@@ -123,6 +151,94 @@ func analyzeDMG(filePath string) (*Result, error) {
 	}, nil
 }
 
+func extractPlist(file *os.File, header dmgHeader) ([]byte, error) {
+	file.Seek(int64(header.XMLOffset), io.SeekStart)
+	plistData := make([]byte, header.XMLLength)
+	_, err := file.Read(plistData)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read XML plist: %w", err)
+	}
+	return plistData, nil
+}
+
+func parseBlkxTable(plistData []byte) (*blkxTable, error) {
+	var dmgPlist dmgPlist
+	_, err := plist.Unmarshal(plistData, &dmgPlist)
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse DMG property list: %w", err)
+	}
+
+	if len(dmgPlist.BLKXTables) == 0 {
+		return nil, errors.New("blkx table not found in DMG plist")
+	}
+
+	// Assuming we want the first BLKX table
+	return &dmgPlist.BLKXTables[0], nil
+}
+
+func extractDMG(file *os.File, blkxTable *blkxTable, outputPath string) error {
+	outputFile, err := os.Create(outputPath)
+	if err != nil {
+		return fmt.Errorf("failed to create output file: %w", err)
+	}
+	defer outputFile.Close()
+
+	for _, chunk := range blkxTable.Chunks {
+		err := decompressChunk(file, chunk, outputFile)
+		if err != nil {
+			return fmt.Errorf("failed to decompress chunk: %w", err)
+		}
+	}
+	logger.Infof("DMG extraction complete: %s", outputPath)
+	return nil
+}
+
+func decompressChunk(file *os.File, chunk blkxChunk, output io.Writer) error {
+	// Seek to the offset where the compressed data starts
+	if _, err := file.Seek(int64(chunk.CompressedOffset), io.SeekStart); err != nil {
+		return fmt.Errorf("failed to seek to chunk offset: %w", err)
+	}
+
+	// Limit reading to the compressed length
+	reader := io.LimitReader(file, int64(chunk.CompressedLength))
+
+	switch chunk.Type {
+	case 0x80000005: // ZLIB
+		zr, err := zlib.NewReader(reader)
+		if err != nil {
+			return fmt.Errorf("failed to create zlib reader: %w", err)
+		}
+		defer zr.Close()
+		if _, err := io.Copy(output, zr); err != nil {
+			return fmt.Errorf("failed to decompress zlib chunk: %w", err)
+		}
+
+	case 0x80000006: // BZIP2
+		bzr := bzip2.NewReader(reader)
+		if _, err := io.Copy(output, bzr); err != nil {
+			return fmt.Errorf("failed to decompress bzip2 chunk: %w", err)
+		}
+
+	case 0x80000007: // LZFSE
+		data, err := io.ReadAll(reader)
+		if err != nil {
+			return fmt.Errorf("failed to read LZFSE compressed data: %w", err)
+		}
+		decompressed := lzfse.DecodeBuffer(data)
+		if decompressed == nil {
+			return errors.New("failed to decode LZFSE data")
+		}
+		if _, err := output.Write(decompressed); err != nil {
+			return fmt.Errorf("failed to write decompressed LZFSE data: %w", err)
+		}
+
+	default:
+		return fmt.Errorf("unsupported compression type: 0x%x", chunk.Type)
+	}
+
+	return nil
+}
+
 func computeFileHash(file *os.File) string {
 	hash := sha256.New()
 	file.Seek(0, io.SeekStart)
@@ -130,33 +246,4 @@ func computeFileHash(file *os.File) string {
 		logger.Errorf("Failed to compute hash, error: %v", err)
 	}
 	return fmt.Sprintf("%x", hash.Sum(nil))
-}
-
-func decompressChunk(file *os.File, chunk blkxChunk, output io.Writer) error {
-	file.Seek(int64(chunk.CompressedOffset), io.SeekStart)
-	reader := io.LimitReader(file, int64(chunk.CompressedLength))
-
-	var err error
-	switch chunk.Type {
-	case 0x80000005:
-		zr, err := zlib.NewReader(reader)
-		if err != nil {
-			return err
-		}
-		defer zr.Close()
-		_, err = io.Copy(output, zr)
-	case 0x80000006:
-		bzr := bzip2.NewReader(reader)
-		_, err = io.Copy(output, bzr)
-	case 0x80000007:
-		data, err := io.ReadAll(reader)
-		if err != nil {
-			return err
-		}
-		decompressed := lzfse.DecodeBuffer(data)
-		_, err = output.Write(decompressed)
-	default:
-		return errors.New("unsupported compression type")
-	}
-	return err
 }
