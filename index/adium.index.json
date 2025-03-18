@@ -1,16 +1,16 @@
 {
-  "last_updated": "2025-03-17T12:02:41.312601Z",
+  "last_updated": "2025-03-18T17:12:35.44682Z",
   "stats": {
-    "files_stored": 4,
-    "unique_hashes": 4,
-    "last_updated_at": "2025-03-17T12:02:41.312602Z",
+    "files_stored": 6,
+    "unique_hashes": 6,
+    "last_updated_at": "2025-03-18T17:12:35.44682Z",
     "start_time": "0001-01-01T00:00:00Z",
-    "end_time": "2025-03-17T12:02:41.312602Z",
+    "end_time": "2025-03-18T17:12:35.44682Z",
     "files_by_platform": {
-      "macos": 4
+      "macos": 30
     },
     "files_by_type": {
-      "dmg": 4
+      "dmg": 30
     },
     "avg_detection_score": 0.9499999999999998
   },
@@ -19,7 +19,7 @@
       "filename": "AdiumX_0.89.1.dmg",
       "source_url": "https://adiumx.cachefly.net/AdiumX_0.89.1.dmg",
       "website_domain": "adiumx.cachefly.net",
-      "discovered_at": "2025-03-17T12:01:24.303023Z",
+      "discovered_at": "2025-03-18T16:44:55.80867Z",
       "sha3_hash": "d900897c1ccaff4b583fed7c2f86f0ca1184f23954e9e69cb08006453bc6bf5c",
       "file_size_bytes": 11721234,
       "platform": "macos",
@@ -29,7 +29,7 @@
       "extended_metadata": {
         "data_fork_length": 11700873,
         "data_fork_offset": 0,
-        "file_name": "1742212797721309000-AdiumX_0.89.1.dmg",
+        "file_name": "1742316294041762000-AdiumX_0.89.1.dmg",
         "resource_fork": 7699,
         "sector_count": 65058,
         "sha256": "a055b2966387c6dafda446ceaf5629ac8ad12e53bcba81d2bca29ac26ba2e50d",
@@ -41,7 +41,7 @@
       "filename": "Adium_1.0.6.dmg",
       "source_url": "https://adiumx.cachefly.net/Adium_1.0.6.dmg",
       "website_domain": "adiumx.cachefly.net",
-      "discovered_at": "2025-03-17T12:00:24.580503Z",
+      "discovered_at": "2025-03-18T16:44:55.814335Z",
       "sha3_hash": "076addc44627438e6ccddf1b046b901dae452c7fd82f9b0d886597ff01aef36d",
       "file_size_bytes": 13795246,
       "platform": "macos",
@@ -51,7 +51,7 @@
       "extended_metadata": {
         "data_fork_length": 13781282,
         "data_fork_offset": 0,
-        "file_name": "1742212723900254000-Adium_1.0.6.dmg",
+        "file_name": "1742316293712196000-Adium_1.0.6.dmg",
         "resource_fork": 0,
         "sector_count": 73642,
         "sha256": "26c71c781c7ed6be9b9ad4ef4f6fe88c4d1b3953737aa95ad8befa3e256d7bbb",
@@ -60,10 +60,32 @@
       }
     },
     {
+      "filename": "Adium_1.3.10.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.3.10.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-18T16:44:54.329654Z",
+      "sha3_hash": "5ab8ebd44c514c142d5667f265c6ecd5de0010096dbab60a64dabd4f15e99e76",
+      "file_size_bytes": 22369877,
+      "platform": "macos",
+      "file_type": "dmg",
+      "detection_score": 0.95,
+      "is_installer": true,
+      "extended_metadata": {
+        "data_fork_length": 22348691,
+        "data_fork_offset": 0,
+        "file_name": "1742316287292633000-Adium_1.3.10.dmg",
+        "resource_fork": 0,
+        "sector_count": 133594,
+        "sha256": "6142097d245d2460d3f424caeaef9738c0b0bd4e817d983342e01a3fcd25c520",
+        "xml_length": 20674,
+        "xml_offset": 22348691
+      }
+    },
+    {
       "filename": "Adium_1.4.5.dmg",
       "source_url": "https://adiumx.cachefly.net/Adium_1.4.5.dmg",
       "website_domain": "adiumx.cachefly.net",
-      "discovered_at": "2025-03-17T11:59:53.946798Z",
+      "discovered_at": "2025-03-18T16:44:54.102662Z",
       "sha3_hash": "77f54d70bde81d1bdcd06fd8f020225fd48e9a9d639f0f6a2f0de6a09aea9fb9",
       "file_size_bytes": 23065688,
       "platform": "macos",
@@ -73,7 +95,7 @@
       "extended_metadata": {
         "data_fork_length": 23042836,
         "data_fork_offset": 0,
-        "file_name": "1742212661311823000-Adium_1.4.5.dmg",
+        "file_name": "1742316287292652000-Adium_1.4.5.dmg",
         "resource_fork": 0,
         "sector_count": 169954,
         "sha256": "95d5dc8666ac7f3054c711643d5978e72c09e2e7793e3a52c3580429d770e87f",
@@ -85,7 +107,7 @@
       "filename": "Adium_1.5.10.4.dmg",
       "source_url": "https://adiumx.cachefly.net/Adium_1.5.10.4.dmg",
       "website_domain": "adiumx.cachefly.net",
-      "discovered_at": "2025-03-17T11:58:30.995737Z",
+      "discovered_at": "2025-03-18T16:44:52.90396Z",
       "sha3_hash": "55b850d88908ec4c2b3157bfaeb0c23b6e1f427431d631aec08fbd62ed9494ac",
       "file_size_bytes": 21140435,
       "platform": "macos",
@@ -95,12 +117,34 @@
       "extended_metadata": {
         "data_fork_length": 21127739,
         "data_fork_offset": 0,
-        "file_name": "1742212657075094000-Adium_1.5.10.4.dmg",
+        "file_name": "1742316286487583000-Adium_1.5.10.4.dmg",
         "resource_fork": 0,
         "sector_count": 142204,
         "sha256": "31fa3fd32b86dd3381b60e0d5aafbc2a9452036f0fb4963bffbc2a6c64a9458b",
         "xml_length": 12184,
         "xml_offset": 21127739
+      }
+    },
+    {
+      "filename": "Adium_1.5.10.dmg",
+      "source_url": "https://adiumx.cachefly.net/Adium_1.5.10.dmg",
+      "website_domain": "adiumx.cachefly.net",
+      "discovered_at": "2025-03-18T16:44:54.633923Z",
+      "sha3_hash": "889d4d45acdddd7c3e53659916dc56fc4bf2b2760acc1a12419513a30ef97cb1",
+      "file_size_bytes": 24595712,
+      "platform": "macos",
+      "file_type": "dmg",
+      "detection_score": 0.95,
+      "is_installer": true,
+      "extended_metadata": {
+        "data_fork_length": 24572325,
+        "data_fork_offset": 0,
+        "file_name": "1742316287292613000-Adium_1.5.10.dmg",
+        "resource_fork": 0,
+        "sector_count": 158206,
+        "sha256": "bca3ac81d33265b71c95a3984be80715fbd98f38d7c463d0441d43a335ed399a",
+        "xml_length": 22875,
+        "xml_offset": 24572325
       }
     }
   ]
