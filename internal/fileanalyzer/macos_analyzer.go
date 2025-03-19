@@ -148,8 +148,6 @@ func (a *MacOSAnalyzer) Analyze(filePath string) (*Result, error) {
 	switch ext {
 	case ".pkg":
 		return analyzePKG(filePath)
-	case ".dmg":
-		return analyzeDMG(filePath)
 	case ".app":
 		return analyzeAppBundle(filePath)
 	default:

@@ -45,6 +45,7 @@ func NewManager() *Manager {
 	m.RegisterAnalyzer(&DEBAnalyzer{})
 
 	// Then register general analyzers
+	m.RegisterAnalyzer(&DmgAnalyzer{})
 	m.RegisterAnalyzer(&PEAnalyzer{})
 	m.RegisterAnalyzer(&MacOSAnalyzer{})
 	m.RegisterAnalyzer(&ZipAnalyzer{})

@@ -5,13 +5,13 @@ go 1.23
 toolchain go1.23.7
 
 require (
-	github.com/blacktop/lzfse-cgo v1.1.20
 	github.com/blakesmith/ar v0.0.0-20190502131153-809d4375e1fb
 	github.com/cavaliergopher/rpm v1.2.0
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/klauspost/compress v1.18.0
 	github.com/sassoftware/relic/v8 v8.2.0
 	github.com/spf13/cobra v1.9.1
+	github.com/ulikunitz/xz v0.5.12
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8
 	golang.org/x/crypto v0.33.0
 	howett.net/plist v1.0.1
